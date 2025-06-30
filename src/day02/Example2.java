@@ -70,12 +70,10 @@ public class Example2 { // class s
         boolean value7 = scan.nextBoolean();
         System.out.println("9. nextBoolean() result : " + value7 );
 
-
-
-
-
-
-
+        // 10. next().charAt( 0 ); : 입력받은 문자열 중에 첫번째 글자1개(char) 반환 , * nextChar() 없다.
+        System.out.print("10. next().charAt(0) : ");
+        char value8 = scan.next().charAt( 0 );
+        System.out.println("10 next().charAt(0) result : " + value8 );
 
     } // m e
 } // class e
