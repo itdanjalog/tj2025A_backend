@@ -50,7 +50,7 @@
                     double      8바이트        소수점17자리 표현(*리터럴실수)
         [논리]       boolean     1바이트        true/false
         [문자]       char        2바이트        유니코드 , ' '작은따옴표 감싼 문자1개
-                    *String      클래스         클래스 , " " 큰따옴표 감싼 문자여러개
+                    *String     클래스         클래스 , " " 큰따옴표 감싼 문자여러개
 [출력함수]
     1. System.out.print();                                      : 출력
     2. System.out.println();                                    : 출력후 줄바꿈
