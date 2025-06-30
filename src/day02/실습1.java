@@ -10,18 +10,38 @@ public class 실습1 { // 자바코드는 모두 클래스안에서 작성해야
         // 1. System.out.println(); : sout + 엔터
         System.out.println( 25 );       // !! 명령어 끝에 ;세미콜론 필수
         System.out.println( "홍길동" ); // ctrl+shift+f10,
+
         // 2. 변수란? 하나의 자료를 저장하는 메모리 공간
         int age = 40;   // int(저장공간크기) age(공간이름) =(대입) 40(리터럴/자료);
         System.out.println( age ); // System.out.println( 리터럴/변수호출/연산식/함수호출 );
+
         // 3. 초기화란? 변수 선언과 동시에 값 대입
         String name = "유재석";
         int age2 = 50;
         double height = 189.35;
         String motto = "열심히 살자";
+
         // 4. + 연결연산자 , "문자열" + 변수명 + "문자열" + 변수명
-        System.out.println( "제 이름은 "+name+", 나이는 "+age2+"세, 키는 "+height+"cm 입니다.");
+        System.out.println( "제 이름은 "+name+", 나이는 "+age2+"세, 키는 "+height+"cm 입니다." );
+
         // 5. 서식출력
         System.out.printf( "제 이름은 %s, 나이는 %d세, 키는 %.1fcm 입니다.\n" , name , age2 , height );
+
+        // 6. 이스케이프(제어문자)
+        System.out.println("|\\_/|");               // 키보드 엔터 위에 \백슬래시(원화기호) , shift+\ : |
+        System.out.println("|q p|   /}");
+        System.out.println("( 0 ) \"\"\"\\");
+        System.out.println("|\"^\"`    |");         // shift+6 : ^
+        System.out.println("||_/=\\\\__|");
+
+        // 7.
+        int num = 1;
+        String writer = "유재석";
+        String content = "안녕하세요!";
+        System.out.printf("========== 방문록 ========== \n"); // \n 줄바꿈
+        System.out.printf("%-5s \t %-5s \t %-10s \n" , "번호" , "작성자" , "방문록"); // \t 들여쓰기
+        System.out.printf("%-6d \t %-5s \t %-10s \n" , num , writer , content );
+        System.out.printf("=========================== \n");
 
     } // main end
 } // class end
