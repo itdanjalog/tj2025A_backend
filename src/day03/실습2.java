@@ -50,17 +50,18 @@ public class 실습2 { // [컴파일/번역] 자바의 모든 코드는 클래�
         System.out.printf("당신의 키는 약 %dcm 이군요." , (int)height ); // 3. (변환할타입명)변수명
 
         // 7. 입력함수
-        System.out.print("이름 : ");                          String name2 = scan.next();
+        System.out.print("이름 : ");                              String name2 = scan.next();
             // VS JS방식 : let name2 = prompt("이름 : ");
-        System.out.print("나이 : ");                          int age2 = scan.nextInt();
+        System.out.print("나이 : ");                              int age2 = scan.nextInt();
             // VS JS방식 : let age2 = Number( prompt("나이 : ") );
-        System.out.print("키 : ");                           double height2 = scan.nextDouble();
-        System.out.print("프로그래머입니까? (true/false):");    boolean check2 = scan.nextBoolean();
+        System.out.print("키 : ");                                double height2 = scan.nextDouble();
+        System.out.print("프로그래머입니까? (true/false):");        boolean check2 = scan.nextBoolean();
         System.out.println("--- 자기소개 ---");
         System.out.println("이름 : " + name2 );
         System.out.println("나이 : " + age2 );
         System.out.println("키 : " + height2 +"cm");
         System.out.println("프로그래머 여부 : " + check2 );
+
     } // main e
 } // class e
 
