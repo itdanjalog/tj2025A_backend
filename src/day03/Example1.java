@@ -72,7 +72,8 @@ public class Example1 { // class s
         }else{
             System.out.println("걸어 간다.");
         }
-        // [5] 다수조건일대 여러 결과 추출
+
+        // [5] 다수조건일때 여러 결과 추출
         if( 지갑돈 >= 3000 ){
             System.out.println("택시를 탄다.2");
         }
