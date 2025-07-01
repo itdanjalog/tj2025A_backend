@@ -59,8 +59,22 @@ public class 실습3 { // class s
         */
 
         // 문제7 : 최동진
-        // 문제8 : 민성호
-        // 문제9 : 신연우
+        System.out.print("정수를 입력하세요 : ");     int i1 = scan.nextInt(); // 1. 하나의 정수를 입력받아 저장
+        System.out.print("결과:");
+        System.out.println(i1 % 2 == 1 && i1 % 7 == 0 ); // 2. 정수가 홀수 이면서 정수가 7의 배수, &&이면서
+
+        // 문제8 : 민성호 : 삼항연산자 목적 : true 와 false 대신에 다른 자료로 변경
+        System.out.print("1차점수 : ");            int score1 = scan.nextInt();
+        System.out.print("2차 점수 : ");           int score2 = scan.nextInt();
+        System.out.println( score1+score2 >= 150 ? "합격" : "불합격");
+
+        // 문제9 : 신연우 : 삼항연산자 , 연결연산자 , .문자열비교
+        System.out.print("이름을 입력하세요 : ");   String nameInput1 = scan.next();    // 1. 하나의 String(문자열) 입력받아 저장
+        System.out.println( nameInput1.equals("유재석") ? nameInput1 + "(방장)" : nameInput1 );
+                            // 삼항연산자 : 조건 ? 참 : 거짓
+                            // 조건           : 만약에 입력값(nameInput1) 이 "유재석" 이면
+                            // 참(true)       : 입력값(nameInput1) 뒤에 "(방장)" 문자열 +연결
+                            // 거짓(false)    :  입력값(nameInput1)
         // 문제10 : 김진숙
         // 문제11 : 김재영
         // 문제12 : 박옥선
@@ -68,6 +82,7 @@ public class 실습3 { // class s
         // 문제14 : 옹태경
         // 문제15 : 송지훈
         // 문제16 : 이찬영
+
     } // main e
 } // class e
 
