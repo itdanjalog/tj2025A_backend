@@ -121,7 +121,7 @@ public class 실습3 { // class s
             // (삼항연산자 중첩) 조건1 ? 참1 : 조건2 ? 참2 : 조건3 ? 참3 : 거짓(그외)   ---> 복잡도 증가 ---> if사용
         System.out.printf("등급 : %s \n" , 등급);
         // 문제16 : 이찬영 , 20<=age<=29 [x] 범위논리없다 , &&이면서 활용
-        System.out.print("나이 입력");            int age = scan.nextInt();
+        System.out.print("나이 입력: ");            int age = scan.nextInt();
         String event = age >= 20 && age<= 29 ? "이벤트 대상입니다" : "이벤트 대상이 아닙니다";
         System.out.println(event);
 
