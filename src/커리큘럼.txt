@@ -11,11 +11,11 @@
 
 [금] * PPT 예시 자료 * 녹화본 * 배포
 
-7[월] 참조타입 : 클래스 멤버변수
-8[화] 참조타입 : 클래스 메소드
-9[수] 참조타입 : 생성자/접근제한자, setter/getter , 상수final , static
-10[목] 참조타입 : MVC 패턴 , 싱글톤
-11[금] 참조타입 : 컬렉션 프레임워크
+7[월] 참조타입 : 배열1 , 배열과제5개 , boardService2  / 클래스 멤버변수 , boardService3
+8[화] 참조타입 : boardService4  / 클래스 메소드 boardService5
+9[수] 참조타입 : 생성자/접근제한자, setter/getter , 상수final , static boardService6
+10[목] 참조타입 : MVC 패턴 , 싱글톤 boardService7
+11[금] 참조타입 : 컬렉션 프레임워크 boardService8
 
 12[월] 참조타입 : 상속1 / DB
 13[화] 참조타입 : 상속2 / DB
