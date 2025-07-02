@@ -7,6 +7,7 @@ public class 실습4 { // class s
 
         Scanner scan = new Scanner( System.in );// 공통 1). Scanner 객체 생성 하여 변수에 저장
         // 1.
+        /*
         int a = scan.nextInt();                 // 2). Scanner 이용하여 int 정수 두개를 입력받아 각 변수에 저장
         int b = scan.nextInt();
         int z = a + b;                          // 3). 입력받은 두 변수의 값을 더한 결과를 변수에 저장
@@ -15,24 +16,64 @@ public class 실습4 { // class s
         }else{
             System.out.println("실패");          // 5). '실패' console 출력한다.
         }
+        */
 
         // 2.
+        /*
         System.out.print("2)정수1 : "); int 정수1 = scan.nextInt();
         System.out.print("2)정수2 : "); int 정수2 = scan.nextInt();
         if( 정수1 > 정수2 ){ System.out.println( 정수1 ); }
         else if( 정수1 < 정수2 ){  System.out.println( 정수2 );  }
         else{ System.out.println("같다");  }
+        */
+
         // 3.
+        /*
         System.out.print("3)아이디 : ");         String id = scan.next();
         System.out.print("3)비밀번호 : ");       String pwd = scan.next();
         if( id.equals("admin") && pwd.equals("1234") ){ System.out.println("로그인 성공");}
         else{   System.out.println("로그인 실패"); }
+        */
+
         // 4.
+        /*
         System.out.print("4)비밀번호 : ");         String password = scan.next();
         int pwdLen = password.length();             // "문자열".length() : 문자열의 길이(문자개수 반환 함수)
         if( pwdLen >= 12 ){ System.out.println("강함");}
         else if( pwdLen >= 8 ){ System.out.println("보통");}
         else{  System.out.println("약함"); }
+        */
+
+        // 5. 주민등록번호 : 문자열(String)
+        System.out.print("5) 주민등록번호(-포함) : ");  String ssn = scan.next();
+        char genderNum = ssn.charAt(7);  // "문자열".charAt( 인덱스 ) : 인덱스 번째의 문자1개 반환 , 8번째 --> 인덱스 : 7
+            // 문자(char) '' , ==    VS      문자열(String) , "" , equals()
+        if( genderNum == '1' || genderNum == '3' ){  System.out.println("남성"); }
+        else{ System.out.println("여성");  }
+        // 6.
+        System.out.print("6) 게임점수 : ");     int score = scan.nextInt();
+        if( score >= 900 ){ System.out.println("A급"); }
+        else if( score >=700 ){ System.out.println("B급"); } // 앞조건 충족 못할경우 900점 미만
+        else if( score >=500 ){ System.out.println("C급"); }
+        else{ System.out.println("참가상"); }
+        // 7.
+        System.out.print("7) 권한 : ");   String role = scan.next();
+        if( role.equals("admin") ){ System.out.println("모든 기능에 접근할 수 있습니다."); }
+        else if( role.equals("editor") ){  System.out.println("콘텐츠 수정 및 생성 기능에 접근할 수 있습니다."); }
+        else if( role.equals("viewer") ){  System.out.println("콘텐츠 조회만 가능합니다."); }
+        // 8.
+        System.out.print("8) 나이 : ");     int age = scan.nextInt();
+        if( age >= 65 ){   System.out.println("3,000원");}
+        else if( age >= 20 ){  System.out.println("10,000원");}
+        else if( age >= 8 ){  System.out.println("5,000원");}
+        else{ System.out.println("무료");}
+        // 9.
+        System.out.print("9) 점수 : ");       int point = scan.nextInt();
+        if( point >= 90 ){ System.out.println("A등급");}
+        else if( point >= 80 ){ System.out.println("B등급");}
+        else if( point >= 70 ) { System.out.println("C등급");}
+        else{ System.out.println("재시험");}
+
 
 
     } // main e
