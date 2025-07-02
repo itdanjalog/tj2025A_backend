@@ -86,27 +86,58 @@ public class 실습4 { // class s
         */
 
         // 10.
+        /*
         System.out.print("10) 구매 금액 : "); int money = scan.nextInt();
         if( money >= 50000 ) { System.out.println( money * 0.9 ); } // 1 : 100%, 0.1 : 10% , 0.5 : 50% , 0.01 : 1%
         else if( money >= 30000) { System.out.println( money * 0.95 ); }
         else if( money >= 10000 ){ System.out.println( money * 0.99 ); }
         else{  System.out.println( money );  }
-
+        */
         // 11.
+        /*
         System.out.print("11) 월 : "); int month = scan.nextInt();
         if( month <= 0 || month >= 13 ){ System.out.println("잘못된 월입니다."); }
         else if( month >= 3 && month <= 5 ){  System.out.println("봄");  }
         else if( month >= 6 && month <=8 ){  System.out.println("여름");  }
         else if( month >= 9 && month <=11 ){ System.out.println("가을");  }
         else{ System.out.println("겨울");  }
-
+        */
         // 12.
-
+        /*
+        System.out.print("12) 정수1 : "); int 정수1 = scan.nextInt();
+        System.out.print("12) 정수2 : "); int 정수2 = scan.nextInt();
+        System.out.print("12) 정수3 : "); int 정수3 = scan.nextInt();
+        int max = 정수1; // 첫번째 입력값을 가장 큰수로 임의 지정
+        if( max < 정수2 ){ max = 정수2; }
+        if( max < 정수3 ){ max = 정수3; }
+        System.out.println( max );
+        */
         // 13.
+        /*
+        System.out.print("13) 연도 : "); int year = scan.nextInt();
+        if( ( year % 4 == 0 && year % 100 != 0 ) || ( year % 400 == 0 ) ){ System.out.println("윤년");}
+        else{ System.out.println("평년"); }
+        */
 
-        // 14.
+        // 14. 변수들간의 값 교체( 스왑=swap ) : let temp = a;  a = b ; b = temp;
+        // 변수란? 하나의 자료만 저장 가능한 공간 즉] a란 변수에 b값이 들어오면 기존 a값은 사라진다.
+        // 비교 : a b c : (1) a > b (2) a > c (3) b > c
+        System.out.print("14) a : "); int a = scan.nextInt();
+        System.out.print("14) b : "); int b = scan.nextInt();
+        System.out.print("14) c : "); int c = scan.nextInt();
+        if( a > b ){ int temp = a; a = b; b=temp; }
+        if( a > c ){ int temp = a; a = c; c=temp; }
+        if( b > c ){ int temp = b; b = c; c=temp; }
+        System.out.printf(" %d -> %d -> %d \n" , a , b , c );
 
         // 15.
+        System.out.print("15) 플레이어1 0가위 or 1바위 or 2보 : "); int p1 = scan.nextInt();
+        System.out.print("15) 플레이어2 0가위 or 1바위 or 2보 : "); int p2 = scan.nextInt();
+        // 방법1 , p1이기는조건( p1==0 && p2==2 이거나 p1==1 && p2==0 이거나 p1==2 && p2==1 )
+        // 방법2 , p1이기는조건( p1 == ( p2 + 1 ) % 3 )
+        if( (p1==0 && p2==2) || (p1==1&&p2==0) || (p1==2&&p2==1) ){System.out.println("플레이어1 승리"); }
+        else if( p1 == p2 ){  System.out.println("무승부"); }
+        else{  System.out.println("플레이어2 승리"); }
 
     } // main e
 } // class e
