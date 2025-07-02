@@ -45,36 +45,68 @@ public class 실습4 { // class s
         */
 
         // 5. 주민등록번호 : 문자열(String)
+        /*
         System.out.print("5) 주민등록번호(-포함) : ");  String ssn = scan.next();
         char genderNum = ssn.charAt(7);  // "문자열".charAt( 인덱스 ) : 인덱스 번째의 문자1개 반환 , 8번째 --> 인덱스 : 7
             // 문자(char) '' , ==    VS      문자열(String) , "" , equals()
         if( genderNum == '1' || genderNum == '3' ){  System.out.println("남성"); }
         else{ System.out.println("여성");  }
+        */
+
         // 6.
+        /*
         System.out.print("6) 게임점수 : ");     int score = scan.nextInt();
         if( score >= 900 ){ System.out.println("A급"); }
         else if( score >=700 ){ System.out.println("B급"); } // 앞조건 충족 못할경우 900점 미만
         else if( score >=500 ){ System.out.println("C급"); }
         else{ System.out.println("참가상"); }
+        */
         // 7.
+        /*
         System.out.print("7) 권한 : ");   String role = scan.next();
         if( role.equals("admin") ){ System.out.println("모든 기능에 접근할 수 있습니다."); }
         else if( role.equals("editor") ){  System.out.println("콘텐츠 수정 및 생성 기능에 접근할 수 있습니다."); }
         else if( role.equals("viewer") ){  System.out.println("콘텐츠 조회만 가능합니다."); }
+        */
         // 8.
+        /*
         System.out.print("8) 나이 : ");     int age = scan.nextInt();
         if( age >= 65 ){   System.out.println("3,000원");}
         else if( age >= 20 ){  System.out.println("10,000원");}
         else if( age >= 8 ){  System.out.println("5,000원");}
         else{ System.out.println("무료");}
+        */
         // 9.
+        /*
         System.out.print("9) 점수 : ");       int point = scan.nextInt();
         if( point >= 90 ){ System.out.println("A등급");}
         else if( point >= 80 ){ System.out.println("B등급");}
         else if( point >= 70 ) { System.out.println("C등급");}
         else{ System.out.println("재시험");}
+        */
 
+        // 10.
+        System.out.print("10) 구매 금액 : "); int money = scan.nextInt();
+        if( money >= 50000 ) { System.out.println( money * 0.9 ); } // 1 : 100%, 0.1 : 10% , 0.5 : 50% , 0.01 : 1%
+        else if( money >= 30000) { System.out.println( money * 0.95 ); }
+        else if( money >= 10000 ){ System.out.println( money * 0.99 ); }
+        else{  System.out.println( money );  }
 
+        // 11.
+        System.out.print("11) 월 : "); int month = scan.nextInt();
+        if( month <= 0 || month >= 13 ){ System.out.println("잘못된 월입니다."); }
+        else if( month >= 3 && month <= 5 ){  System.out.println("봄");  }
+        else if( month >= 6 && month <=8 ){  System.out.println("여름");  }
+        else if( month >= 9 && month <=11 ){ System.out.println("가을");  }
+        else{ System.out.println("겨울");  }
+
+        // 12.
+
+        // 13.
+
+        // 14.
+
+        // 15.
 
     } // main e
 } // class e
