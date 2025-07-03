@@ -9,7 +9,7 @@ public class 실습5 { // class start
         for( int i = 1 ; i <= 10 ; i++ ){  System.out.println( i ); }
 
         // 2. [초기값] : 10부터 , [조건문] : 1까지 , [증감식] : 1씩감소 , [실행문] : 출력
-        for( int i = 10 ; i >= 1 ; i-- ) { System.out.println(i);  }
+        for( int i = 10 ; i >= 1 ; i-- ) { System.out.println( i );  }
 
         // 3. [초기값] : 1부터 , [조건문] : 50까지 , [증감식] : 1씩증가 , [실행문] : 누적합계 +=
         int sum = 0; // 누적합계 변수 초기값
