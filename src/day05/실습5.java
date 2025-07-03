@@ -1,5 +1,7 @@
 package day05;
 
+import java.util.Scanner;
+
 public class 실습5 { // class start
 
     public static void main(String[] args) { // main start
@@ -45,22 +47,54 @@ public class 실습5 { // class start
             } // if end
         } // for end
 
-        // 7. [초기값] : , [조건문] : , [증감식] : , [실행문] :
+        // 7.
         /*              줄       별
         *               1        1
         **              2        1 2
         ***             3        1 2 3
         ****            4        1 2 3 4
         *****           5        1 2 3 4 5
-        줄 [초기값] : 1부터 , [조건문] : 5까지 , [증감식] : 1씩증가 , [실행문] : 줄바꿈
-        별 [초기값] : 1부터 , [조건문] : 현재*줄*까지 , [증감식] : 1씩증가 , [실행문] : *출력
+        줄 [초기값] : 1부터 , [조건문] : 5까지 ,       [증감식] : 1씩증가 , [실행문] : 줄바꿈
+        별 [초기값] : 1부터 , [조건문] : 현재 줄 까지 , [증감식] : 1씩증가 , [실행문] : *출력
         */
         for( int 줄 = 1 ; 줄 <= 5 ; 줄++ ){
             for( int 별 = 1 ; 별 <= 줄 ; 별++ ){
-                System.out.print("*"); // 줄바꿈 처리 없는 print 함수 * 출력
+                System.out.print( "*" ); // 줄바꿈 처리 없는 print 함수 * 출력
             } // for end
             System.out.println(); // 줄바꿈 처리
         } // for end
+
+        // 8.
+        /*          줄       별               별조건식
+        *****       1       1 2 3 4 5        5, 전체줄수-현재줄수 =  4+1
+        ****        2       1 2 3 4          4,                    3+1
+        ***         3       1 2 3            3,                    2+1
+        **          4       1 2              2,                    1+1
+        *           5       1                1,                    0+1
+        줄 [초기값] : 1부터 , [조건문] : 5까지 ,                    [증감식] : 1씩증가 , [실행문] : 줄바꿈
+        별 [초기값] : 1부터 , [조건문] : 전체줄수-현재줄수+1 까지  , [증감식] : 1씩증가  , [실행문] : *출력
+        */
+        int 전체줄수 = 5;
+        for( int 줄 = 1 ; 줄 <= 전체줄수 ; 줄++ ){
+            for( int 별 = 1 ; 별 <= 전체줄수 - 줄 +1 ; 별++ ){
+                System.out.print("*");
+            } // for end
+            System.out.println(); // 줄바꿈 처리
+        } // for end
+        // 9. [초기값] : 생략 , [조건문] : 생략 , [증감식] : 생략 , [실행문] : 입력, 출력, "end"이면 break
+        int count = 0; // 반복문 밖에서 반복(입력) 횟수 변수를 선언하고
+        for( ; ; ){ // 무한루프
+            Scanner scan = new Scanner(System.in); // (1) 입력객체 생성하여 변수에 저장한다.
+            String str = scan.next(); // (2) 문자열 입력받아 문자열 변수에 저장한다.
+            System.out.println( str ); // (3) 입력받은 값 출력
+            if( str.equals( "end" ) ) { // (4) 자바에서 문자열 비교는 .equals() 함수 사용.
+                System.out.printf("[안내] 프로그램 종료 합니다. [총 %d회 입력] \n" , count );// (7)
+                break;// (5) 가장 가까운 반복문 종료 : 무한루프 종료
+            }
+            // (6) 입력 횟수 == 반복 횟수 저장하는 변수 ,
+            // int count = 0; // 반복문 안에서 변수 선언시 선언이 계속 반복된다.
+            count++; // count +=1   , count = count + 1
+        } //for end
 
     } // main end
 } // class end
