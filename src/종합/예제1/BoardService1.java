@@ -17,12 +17,24 @@ public class BoardService1 { // class start
             System.out.println("  1.게시물쓰기 | 2.게시물출력");
             System.out.println("========================================");
             System.out.print("선택 > ");
-            Scanner scan = new Scanner(System.in);  // (3) 입력
+            Scanner scan = new Scanner(System.in);                          // (3) 입력
             int choose = scan.nextInt();
-            if( choose == 1 ) {                     // (4) 입력에 따른 출력 구현.
-                System.out.println("내용 : ");
-                System.out.println("작성자 : ");
-                System.out.println("[글쓰기] 성공");
+            if( choose == 1 ) {                                             // (4) 입력에 따른 출력 구현.
+                // (6-1) 기능별 세부 코드 구현
+                System.out.print("내용 : ");         String content = scan.next(); // 입력받기
+                System.out.print("작성자 : ");       String writer = scan.next();
+                if( content1 == null ){ // 게시물1 이 비어있는지 확인
+                    content1 = content; writer1 = writer; // 입력받은 값을 대입.
+                    System.out.println("[글쓰기] 성공");
+                }else if( content2 == null ){ // 게시물2 이 비어있는지 확인
+                    content2 = content; writer2 = writer;
+                    System.out.println("[글쓰기] 성공");
+                }else if( content3 == null ){ // 게시물3 이 비어있는지 확인
+                    content3 = content; writer3 = writer;
+                    System.out.println("[글쓰기] 성공");
+                }else{ // 그외 , 비어있는 게시물 못찾음...
+                    System.out.println("[경고] 게시물을 등록할 공간이 부족합니다.");
+                }
             }else if( choose == 2 ){
                 System.out.println("============= 게시물 목록 =============");
                 System.out.println( "작성자 : ");
