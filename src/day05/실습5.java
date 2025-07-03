@@ -81,6 +81,7 @@ public class 실습5 { // class start
             } // for end
             System.out.println(); // 줄바꿈 처리
         } // for end
+
         // 9. [초기값] : 생략 , [조건문] : 생략 , [증감식] : 생략 , [실행문] : 입력, 출력, "end"이면 break
         int count = 0; // 반복문 밖에서 반복(입력) 횟수 변수를 선언하고
         for( ; ; ){ // 무한루프
@@ -95,6 +96,26 @@ public class 실습5 { // class start
             // int count = 0; // 반복문 안에서 변수 선언시 선언이 계속 반복된다.
             count++; // count +=1   , count = count + 1
         } //for end
+
+        // 10. [초기값] : 1부터 , [조건문] : 100나눈값까지 , [증감식] : 1씩증가 , [실행문] : ㅁ+한자키 - ■ 출력
+        int july1 = 3532100;    int july1만원 = july1 / 10000 ; // int / int -> int(몫)
+        int july2 = 9123700;    int july2만원 = july2 / 10000 ; // int / int -> int(몫)
+        int july3 = 5183400;    int july3만원 = july3 / 10000 ; // int / int -> int(몫)
+        int july4 = 11738700;   int july4만원 = july4 / 10000 ; // int / int -> int(몫)
+
+        for( int i = 1 ; i <= july1만원/100 ; i++ ){ System.out.print("■"); }
+        System.out.println( july1만원 +"만원" );
+
+        for( int i = 1 ; i <= july2만원/100 ; i++ ){ System.out.print("■"); }
+        System.out.println( july2만원 +"만원" );
+
+        for( int i = 1 ; i <= july3만원/100 ; i++ ){ System.out.print("■"); }
+        System.out.println( july3만원 +"만원" );
+
+        for( int i = 1 ; i <= july4만원/100 ; i++ ){ System.out.print("■"); }
+        System.out.println( july4만원 +"만원" );
+
+
 
     } // main end
 } // class end
