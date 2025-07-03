@@ -26,6 +26,27 @@ public class 실습5 { // class start
             } // if end
         } // for end
 
+        // 5. [초기값] : 1부터 , [조건문] : 30까지 , [증감식] : 1씩증가 , [실행문] : 3배수제외한 숫자 출력
+        for( int i = 1 ; i <= 30 ; i++ ){
+            if( i % 3 == 0){ // 배수찾기 : 값 % 배수 == 0
+                continue; // 가장 가까운 반복문(증감식) 으로 이동
+            } // if end
+            System.out.println( i );
+        } // for end
+
+        // 6. [초기값] : 1부터 , [조건문] : 100까지 , [증감식] : 1씩증가 , [실행문] : 누적합계 , 100초과하는시점
+        int sum2 = 0; // 3번 문제와 변수명 중복이므로 sum2
+        for( int i = 1 ; i <= 100 ; i++ ){
+            sum2 += i ; // 변수 += 값
+            if( sum2 > 100 ){ // 누적합계가 100 초과하는 시점
+                System.out.println( i );    // 14
+                System.out.println( sum2 ); // 105
+                break; // 가장 가까운 반복문{} 탈출/종료
+            } // if end
+        } // for end
+
+
+
     } // main end
 } // class end
 
