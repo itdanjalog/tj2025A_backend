@@ -7,6 +7,7 @@ public class 실습5 { // class start
     public static void main(String[] args) { // main start
         // [초기값] : , [조건문] : , [증감식] : , [실행문] :
 
+
         // 1. [초기값] : 1부터 , [조건문] : 10까지 , [증감식] : 1씩증가 , [실행문] : 출력
         for( int i = 1 ; i <= 10 ; i++ ){  System.out.println( i ); }
 
@@ -83,6 +84,7 @@ public class 실습5 { // class start
         } // for end
 
         // 9. [초기값] : 생략 , [조건문] : 생략 , [증감식] : 생략 , [실행문] : 입력, 출력, "end"이면 break
+        /*
         int count = 0; // 반복문 밖에서 반복(입력) 횟수 변수를 선언하고
         for( ; ; ){ // 무한루프
             Scanner scan = new Scanner(System.in); // (1) 입력객체 생성하여 변수에 저장한다.
@@ -96,6 +98,7 @@ public class 실습5 { // class start
             // int count = 0; // 반복문 안에서 변수 선언시 선언이 계속 반복된다.
             count++; // count +=1   , count = count + 1
         } //for end
+        */
 
         // 10. [초기값] : 1부터 , [조건문] : 100나눈값까지 , [증감식] : 1씩증가 , [실행문] : ㅁ+한자키 - ■ 출력
         int july1 = 3532100;    int july1만원 = july1 / 10000 ; // int / int -> int(몫)
@@ -115,7 +118,72 @@ public class 실습5 { // class start
         for( int i = 1 ; i <= july4만원/100 ; i++ ){ System.out.print("■"); }
         System.out.println( july4만원 +"만원" );
 
+        //  11.
+//            // step1: 시각적인 요소1 ( 메인화면 )
+//        for( ; ; ){ // (1) 무한루프 , 특정한 break를 만나기 전까지 계속 반복실행
+//            // (2) 출력
+//            System.out.println("---------------------------------");
+//            System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
+//            System.out.println("---------------------------------");
+//            // (3) 입력
+//            System.out.print("선택> ");
+//            Scanner scan = new Scanner( System.in );    // 3-1 : 입력객체 생성하여 변수에 저장
+//            int choose = scan.nextInt();                // 3-2 : 입력받은 정수를 변수에 저장
+//        } // for end
 
+        // step2: 시각적인 요소2 ( 선택 번호의 경우에 따른 화면 출력  )
+//        for( ; ; ){
+//            System.out.println("---------------------------------");
+//            System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
+//            System.out.println("---------------------------------");
+//            System.out.print("선택> ");
+//            Scanner scan = new Scanner( System.in );
+//            int choose = scan.nextInt();
+//            // (1) 선택 판단
+//            if( choose == 1 ){ // 만약에 '1번' 입력했으면
+//                // (2) 각각의 출력/입력
+//                System.out.print("입금액> ");      int money = scan.nextInt();
+//            }else if( choose == 2 ){ // 만약에 '2번' 입력했으면
+//                // (2) 각각의 출력/입력
+//                System.out.print("출금액> ");      int money = scan.nextInt();
+//            }else if( choose == 3 ){ // 만약에 '3번' 입력했으면
+//                System.out.println("잔고> ");
+//            } else if( choose == 4 ){ // 만약에 '4번' 입력했으면
+//                System.out.println("프로그램을 종료합니다.");
+//            }
+//        } // for end
+
+        // step3: 기능 구현에 필요한 메모리 설계
+            // balance변수 : (for밖에-누적o) 초기잔금 0부터 해서 입금 했을때 + , 출금했을때 - 하여 현재 금액 저장하는 변수
+            // money 입금액/출금액 변수 : (for안에-누적x)
+
+        // step4 : 각 기능별 코드 구현
+            // 입금기능 : money 입력받아 balance 변수에 누적합계( + ) 한다.
+            // 출금기능 : money 입력받아 balance 보다 이상이면 차감( - ) 한다.
+            // 잔고기능 : balance 변수 출력한다.
+            // 종료기능 : break; 무한루프 종료한다.
+        int balance = 0; // (1) 메모리 : 잔고변수
+        for( ; ; ){
+            System.out.println("---------------------------------");
+            System.out.println("1:입금 | 2:출금 | 3:잔고 | 4:종료");
+            System.out.println("---------------------------------");
+            System.out.print("선택> ");
+            Scanner scan = new Scanner( System.in );
+            int choose = scan.nextInt();
+            if( choose == 1 ){              // (2) 기능 세부 코드 구현
+                System.out.print("입금액> ");      int money = scan.nextInt();
+                balance += money;
+            }else if( choose == 2 ){        // (2) 기능 세부 코드 구현
+                System.out.print("출금액> ");      int money = scan.nextInt();
+                if( balance >= money ){ balance -= money;  }
+                else{ System.out.println("[안내] 잔고가 부족합니다. ");  }
+            }else if( choose == 3 ){        // (2) 기능 세부 코드 구현
+                System.out.println("잔고> " + balance );
+            } else if( choose == 4 ){       // (2) 기능 세부 코드 구현
+                System.out.println("프로그램을 종료합니다.");
+                break; // 무한루프 종료
+            }
+        } // for end
 
     } // main end
 } // class end
