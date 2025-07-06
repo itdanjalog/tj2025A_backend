@@ -57,11 +57,11 @@ BoardService2
 
 
 */
-package boardService.step2;
+package boardService.step3_배열;
 
 import java.util.Scanner;
 
-public class BoardService2 {
+public class BoardService3 {
     public static void main(String[] args) { // main start
         Scanner scan = new Scanner(System.in);
         // BoardService1 에서 변수를 사용했는데 배열변수를 사용하는이유
@@ -76,7 +76,7 @@ public class BoardService2 {
             System.out.print("1.게시물 쓰기 2.게시물 출력 : ");
             int choose = scan.nextInt();
             if( choose == 1 ){
-                System.out.print("새로운 게시물 제목: "); String cont = scan.next();
+                System.out.print("새로운 게시물 내용: "); String cont = scan.next();
                 System.out.print("새로운 게시물 작성자: "); String writ = scan.next();
                 // 만약에 게시물이 비어 있으면 , 게시물이 100개이면 if 100개검사??? X
                 // 인덱스 0부터 마지막인덱스 99 까지 1씩 증가

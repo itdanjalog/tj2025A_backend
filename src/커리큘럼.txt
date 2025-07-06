@@ -8,7 +8,7 @@
 
 07[월] 참조타입 : 배열1 , 실습6:배열, 실습6:배열, 실습6:배열 / BoardService2 , 클래스란(멤버변수) , 실습7 , 실습7
 08[화] 참조타입 : boardService3 , 클래스(메소드) 실습8 , 실습8 , boardService4
-09[수] 참조타입 : 생성자/접근제한자, 상수final , static boardService6
+09[수] 참조타입 : 생성자/접근제한자, this, 상수final , static boardService6
 10[목] 참조타입 :  setter/getter , MVC 패턴 , 싱글톤 boardService7
 11[금] 참조타입 : 컬렉션 프레임워크 boardService8
 
@@ -88,3 +88,21 @@ day13 : boardService8 MVC 패턴 , 싱글톤
 day14 : boardService9 JDBC  , AarrayList
 day~~ : boardService10 :  MVC패턴의 회원제 게시판 , 설계, 상속
 설계링크 : https://docs.google.com/spreadsheets/d/1jFDQFf7iIXldWPsVi7sQR1CqOUr2Vt5g6oI1y6QC17g/edit?usp=sharing
+
+
+[목]
+boardService1_변수
+[월]
+boardService2_배열
+boardService3_객체
+boardService4_배열과객체
+[화]
+boardService5_메소드
+boardService6_생성자
+수
+boardService7_static
+boardService8_settergetter
+[목]
+boardService9_mvc패턴. 싱글톤
+[금]
+boardService10_컬렉션프레임워크
