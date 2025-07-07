@@ -1,13 +1,8 @@
-package boardService.step5_배열과객체;
+package boardService.step3_배열과객체멤버변수;
 
 import java.util.Scanner;
 
-class Board {
-    String content;
-    String writer;
-}
-
-public class BoardService5 {
+public class BoardService3 {
     public static void main(String[] args) { // main start
         // [5] 클래스 정의하기 , 게시물 타입 만들기
         // ++ 동일한 클래스의 서로 다른 객체를 저장하기위한 *배열* 선언하기

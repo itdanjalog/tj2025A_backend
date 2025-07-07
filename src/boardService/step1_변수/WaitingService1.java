@@ -6,7 +6,7 @@
 	- 총 대기명단은 3개 까지 가능하다. 대기명단 1개당 전화번호·인원수 저장소(변수) 2개 필요 , 대기명단3개 --> 변수 6개 필요.
 	제출 : 카카오톡방에 과제 코드가 존재하는 본인 git 상세주소 제출
 */
-package boardService.step1_task;
+package boardService.step1_변수;
 
 import java.util.Scanner;
 

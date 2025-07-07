@@ -56,7 +56,7 @@
 [경고] 게시물을 등록할 공간이 부족합니다.
 
  */
-package boardService.step1;
+package boardService.step1_변수;
 
 import java.util.Scanner;
 
