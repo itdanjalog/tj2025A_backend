@@ -68,7 +68,6 @@ public class 실습7 {
         System.out.println("채널 : " + t1.channel );
         System.out.println("볼륨 : " + t1.volume );
         // [문제 8]
-        //3. 두 객체의 power와 speed의 합을 각각 계산하고, 합이 더 높은 선수의 이름을 출력하세요.
         Player play1 = new Player();
         Player play2 = new Player();
         play1.name ="손흥민"; play1.power = 90; play1.speed = 95;
