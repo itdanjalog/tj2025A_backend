@@ -6,8 +6,8 @@ public class BoardService2 { // class start
     public static void main(String[] args) { // main start
 
         // (5) 메모리 설계
-        // boardService1 에서는 총 게시물 3개를 저장    , 변수       --> 게시물 100개 -> 200개 변수 필요
-        // boardService2 에서는 총 1게시물 100개를 저장 , 변수+배열  --> 게시물 100개 -> 배열2개 변수 필요.
+        // boardService1 에서는 총 게시물 3개를 저장    , 변수     --> 게시물 100개 -> 200개 변수 필요
+        // boardService2 에서는 총 게시물 100개를 저장 , 변수+배열  --> 게시물 100개 -> 배열2개 변수 필요.
         String[] contents = new String[100];    // 총 문자열(String) 100개를 저장할수 있는 배열 선언
         String[] writers = new String[100];     // 총 문자열(String) 100개를 저장할수 있는 배열 선언
 
@@ -47,7 +47,3 @@ public class BoardService2 { // class start
         } // for end
     } // main end
 } // class end
-// step1: 반복적인 메인(화면) 출력 , 입력
-// step2: 입력 선택에 따른 화면 출력
-// step3: 기능별 필요한 메모리 설계
-// step4: 각 기능별 세부 코드 구현
