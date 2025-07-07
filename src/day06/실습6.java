@@ -1,6 +1,7 @@
 package day06;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class 실습6 { // class start
     public static void main(String[] args) {
@@ -46,6 +47,48 @@ public class 실습6 { // class start
             if( blood.equals( "A" ) ){countA += 1; } // 만약에 배열내 요소가 "A" 이면 countA 변수 1 증가
         } // for end
         System.out.println("A혈액형 개수 : " + countA );
+
+        // [문제 7] 주어진 숫자 배열에서 가장 큰 값을 찾아 콘솔에 출력하는 프로그램을 작성하시오.
+        int[] numbers3 = {23, 5, 67, 12, 88, 34};
+        int max = 0; // 가장 큰값을 저장하는 변수.
+        for ( int number : numbers3 ){
+            if( number >= max ){ max = number; } // 만약에 요소값이 max보다 크면 max에 요소값 대입
+        } // for end
+
+        //[문제 8] 향상된 for 문 사용하지 않은 이유. 재고의 index 필요해서
+        String[] products = {"볼펜", "노트", "지우개"};
+        int[] stock = {10, 5, 20};
+        Scanner scan = new Scanner( System.in); // 1) 입력객체 생성하여 변수에 저장
+        System.out.print(">>상품명 : ");        String name = scan.next(); // 2) 상품명 입력받아 변수에 저장
+        System.out.print(">>구매수량 : ");      int count = scan.nextInt();
+        int check = 0;  // 0 : 없는 제품 , 1:구매완료 , 2:재고부족
+        for( int index = 0 ; index <= products.length - 1 ; index++ ){ // 3) 0부터 마지막인덱스까지 1씩 반복
+            String product = products[index]; // 4) index번째 제품명 호출
+            if( product.equals( name ) ){ // 5) 만약에 index번째 제품명과 입력받은 값이 같으면
+                if( stock[index] <= count ){ // 6) 만약에 index번째 재고 보다 입력받은 재고가 더 크면
+                    stock[index] -= count; // 7) 재고 차감
+                    check = 1; break; // 8) 상태변수 변경
+                }else{
+                    check = 2 ; break;
+                } // if end
+            } // if end
+        } // for end
+        // 9) 상태변수에 따른 출력문
+        if( check == 0 ){ System.out.println(" 없는 제품 입니다. ");  }
+        else if( check == 1 ){ System.out.println("구매 완료 ");  }
+        else if( check == 2 ){ System.out.println("재고 부족 "); }
+
+        //[문제 9] 주어진 영화 이름과 평점 배열을 이용하여, 각 영화의 평점을 별(★, ☆)로 시각화하여 출력하는 프로그램을 작성하시오.
+        //요구 조건: 각 영화의 평점(10점 만점)만큼 꽉 찬 별(★)을, 나머지 점수만큼 빈 별(☆)을 출력합니다.
+        //예시: 평점이 8점이면 ★★★★★★★★☆☆ (총 10개의 별)
+        //선언 코드:
+        //String[] movieNames = {"히든페이스", "위키드", "글래디에이터2", "청설"};
+        //int[] movieRatings = {8, 4, 7, 6};
+        //출력 예시:
+        //히든페이스      ★★★★★★★★☆☆
+        //위키드         ★★★★☆☆☆☆☆☆
+        //글래디에이터2  ★★★★★★★☆☆☆
+        //청설          ★★★★★★☆☆☆☆
 
     } // main end
 } // class end
