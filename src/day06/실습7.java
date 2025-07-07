@@ -61,12 +61,14 @@ public class 실습7 {
         System.out.println("로그인 전 상태 : " + m1.isLogin );
         m1.isLogin = true;
         System.out.println("로그인 후 상태 : " + m1.isLogin );
+
         // [문제 7]
         Television t1 = new Television();
         t1.channel = 7;     t1.volume = 20;
         t1.channel = 11;    t1.volume -= 2;
         System.out.println("채널 : " + t1.channel );
         System.out.println("볼륨 : " + t1.volume );
+
         // [문제 8]
         Player play1 = new Player();
         Player play2 = new Player();
