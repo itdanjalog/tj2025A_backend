@@ -55,6 +55,31 @@ public class 실습7 {
             System.out.printf( prod1.name );
         }else{    System.out.printf( prod2.name );  }
 
+        // [문제 6]
+        Member m1 = new Member();
+        m1.id ="admin";     m1.isLogin = false;
+        System.out.println("로그인 전 상태 : " + m1.isLogin );
+        m1.isLogin = true;
+        System.out.println("로그인 후 상태 : " + m1.isLogin );
+        // [문제 7]
+        Television t1 = new Television();
+        t1.channel = 7;     t1.volume = 20;
+        t1.channel = 11;    t1.volume -= 2;
+        System.out.println("채널 : " + t1.channel );
+        System.out.println("볼륨 : " + t1.volume );
+        // [문제 8]
+        //3. 두 객체의 power와 speed의 합을 각각 계산하고, 합이 더 높은 선수의 이름을 출력하세요.
+        Player play1 = new Player();
+        Player play2 = new Player();
+        play1.name ="손흥민"; play1.power = 90; play1.speed = 95;
+        play2.name ="이강인"; play2.power = 85; play2.speed = 92;
+        if( ( play1.power + play1.speed ) > ( play2.power + play2.speed ) ){
+            System.out.println( play1.name );
+        }else{  System.out.println( play2.name );  }
+
+
+
+
     } // main end
 } // class end
 /*
