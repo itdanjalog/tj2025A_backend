@@ -100,9 +100,9 @@ boardService4_배열과객체
 boardService5_메소드
 boardService6_생성자
 수
-boardService7_static
-boardService8_settergetter
+boardService7_this, static , final , 싱글톤
+boardService8_settergetter , Dto
 [목]
-boardService9_mvc패턴. 싱글톤
+boardService9_mvc패턴
 [금]
 boardService10_컬렉션프레임워크
