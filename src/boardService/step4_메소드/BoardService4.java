@@ -14,19 +14,33 @@ public class BoardService4 { // class start
 		
 		// (1) 게시물 기능(함수) 을 제공하는 서비스 객체 생성 
 		BoardController bs = new BoardController();
-		
-		// (2) 게시물 객체 여러개를 저장하는 배열 생성 
-		Board[] boards = new Board[100];
+
 		while(true) { // w s
 			System.out.print("1.등록 2.출력 : ");
 			Scanner scan = new Scanner(System.in);
 			int choose = scan.nextInt();
+
 			if( choose == 1 ) {
-				bs.boardAdd( scan , boards ); // (1) 객체를 통한 메소드 호출 
+				// [1] 입력받기
+				System.out.print("내용 : ");
+				String content = scan.next();
+				System.out.print("작성자 : ");
+				String writer = scan.next();
+				boolean result = bs.doPost( content , writer );
+				if( result ) { System.out.println("등록 성공했습니다.");}
+				else { System.out.println("등록 실패했습니다.");}
+
 			}else if( choose == 2 ) {
-				bs.boardPrint( boards  ); // (1) 객체를 통한 메소드 호출 
+				Board[] result = bs.doGet();
+				for( int index = 0 ; index <= result.length - 1 ; index++ ) {
+					Board board = result[index];
+					if( board != null ) {
+						System.out.printf("내용 : %s , 작성자 : %s \n" ,
+								board.content , board.writer );
+					}
+				} // for end
 			}
-			
+
 		} // w end
 	}// main end 
 } // class end 
