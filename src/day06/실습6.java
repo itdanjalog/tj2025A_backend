@@ -65,7 +65,7 @@ public class 실습6 { // class start
         for( int index = 0 ; index <= products.length - 1 ; index++ ){ // 3) 0부터 마지막인덱스까지 1씩 반복
             String product = products[index]; // 4) index번째 제품명 호출
             if( product.equals( name ) ){ // 5) 만약에 index번째 제품명과 입력받은 값이 같으면
-                if( stock[index] <= count ){ // 6) 만약에 index번째 재고 보다 입력받은 재고가 더 크면
+                if( stock[index] >= count ){ // 6) 만약에 index번째 재고 보다 입력받은 재고가 이하 이면
                     stock[index] -= count; // 7) 재고 차감
                     check = 1; break; // 8) 상태변수 변경
                 }else{
