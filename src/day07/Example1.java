@@ -51,9 +51,20 @@ public class Example1 {
 
         // [5] 매개변수 O , 반환값 X
         cal1.printSum( 3 , 5 ); // 2개의 정수 인수값 x:3 , y:5
+
         // 오류발생 , 인수값과 매개변수 타입이 불일치
         // cal1.printSum( 3.14 , 5.1 );
         cal2.printSum( 10 , 2 );
+
+        // [6] 매개변수 O , 반환값 O
+        int result2 = cal1.add( 10 , 3 );
+        // int : .add 함수의 반환값 타입이 int 라서.
+        System.out.println( result2 );
+
+        int a = 1;
+        // int result3 = cal1.add( "안녕" , a );
+        // 오류발생 : 인수값 과 매개변수의 타입 일치 해야한다.
+
 
     }
 }
