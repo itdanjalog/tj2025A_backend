@@ -38,6 +38,7 @@ public class BoardService4 { // class start
                 // doGet() 반환된 boards배열 자료를 boards에 대입한다.
                 for (int index = 0; index <= boards.length-1 ; index++) {
                     Board board = boards[index];
+                    // 하나(객체)  = 여러개(객체)배열[번호]
                     if( board != null ) {
                         System.out.println("작성자 : " + board.writer);
                         System.out.println("내용 : " + board.content);
