@@ -1,4 +1,4 @@
-package day07_화;
+package day08_수;
 
 /*
 
@@ -24,7 +24,7 @@ package day07_화;
 
  */
 
-public class Example2_생성자 {
+public class Example1_생성자 {
 
     public static void main(String[] args) {
 

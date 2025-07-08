@@ -1,4 +1,4 @@
-package day07_화;
+package day08_수;
 
 public class 실습9_생성자 {
 }
