@@ -29,24 +29,15 @@ public class 실습8_메소드 {
 1. turnOn 메소드를 호출하면 isOn이 true가 되고, turnOff 메소드를 호출하면 false가 되도록 두 메소드를 정의하세요.
 2. main 함수에서 Lamp 객체를 생성하고, turnOn과 turnOff를 차례로 호출하며 각 단계에서 램프의 상태(isOn 값)를 출력하여 확인하세요.
 
-//[문제 6] Student 클래스를 만드세요. name(문자열)과 isPassed(boolean) 멤버 변수를 가집니다.
-//1. main 함수에서 Student 객체 3개를 생성하고, 두 명만 isPassed를 true로 설정하세요.
-//2. Student 객체 3개를 인자로 받아, isPassed가 true인 학생의 수를 세어 반환하는 countPassedStudents 메소드를 main 함수가 있는 클래스 안에 정의하세요.
-//3. countPassedStudents 메소드를 호출하여 합격한 학생 수를 출력하세요.
-
-//[문제 7] GameCharacter 클래스를 만드세요. name(문자열)과 level(정수) 멤버 변수를 가집니다.
-//1. GameCharacter 객체 두 개를 매개변수로 받아, 레벨이 더 높은 객체의 name을 반환하는 getStrongerCharacter 메소드를 정의하세요.
-//2. main 함수에서 GameCharacter 객체 2개를 생성하고 임의의 레벨을 부여한 뒤, getStrongerCharacter 메소드를 호출하여 승자의 이름을 출력하세요.
-
-[문제 8] Product 클래스를 만드세요. name(문자열)과 stock(정수) 멤버 변수를 가집니다.
+[문제 6] Product 클래스를 만드세요. name(문자열)과 stock(정수) 멤버 변수를 가집니다.
 1. Product 클래스 안에, 구매 수량을 매개변수로 받아 재고를 차감하는 sell 메소드를 정의하세요. 이 메소드는 재고가 충분하면 재고를 줄이고 true를, 부족하면 "재고 부족" 메시지를 출력하고 false를 반환합니다.
 2. main 함수에서 Product 객체를 생성하고 초기 재고를 10으로 설정한 뒤, sell 메소드를 호출하여 구매를 시도하고 결과를 확인하세요.
 
-[문제 9] Visualizer 클래스를 만드세요.
+[문제 7] Visualizer 클래스를 만드세요.
 1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소드를 정의하세요.
 2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.
 
-[문제 10] ParkingLot 클래스를 만드세요.
+[문제 8] ParkingLot 클래스를 만드세요.
 1. 주차 시간(분)을 매개변수로 받아, 요금 규정에 따라 계산된 최종 주차 요금을 반환하는 calculateFee 메소드를 정의하세요.
 2. 요금 규정:
 기본 요금: 최초 30분까지 1,000원
