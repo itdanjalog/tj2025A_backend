@@ -93,5 +93,36 @@ public class 실습6 { // class start
             System.out.println(); // 줄바꿈 처리
         } // for end
 
+        //[문제 10] 차량별 주차 시간 데이터가 주어졌을 때, 아래의 요금 규정에 따라 각 차량이 지불해야 할 최종 주차 요금을 계산하여 출력하시오.
+        // (1) 자바 에서의 배열은 서로 다른 타입간의 데이터를 동일한 배열에 저장할 수 없다.
+        String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"}; // String 타입 끼리
+        int[] usageMinutes = {65, 30, 140, 420 };    // int 타입 끼리
+        // (2) 배열의 순회
+        int money = 0;
+        for( int index = 0 ; index <= carNumbers.length - 1 ; index++ ){
+            System.out.print( carNumbers[index] + "\t");         // 모든 차량 번호 출력
+            // System.out.println( usageMinutes[index] );      // 모든 차량의 사용 시간
+            if( usageMinutes[index] <= 30 ){ money = 1000; }
+            else{   // 사용요금에 30분 빼고 (10분당) 나누기 10 (나머지 없음 : int/int -> int(몫) ) * 500원 +1000원
+                money = ( ( usageMinutes[index] -30 ) / 10 * 500 ) + 1000 ;
+            }
+            money = money >= 20000 ? 20000 : money; // 만약에 금액이 2만원 초과이면 2만원 , 아니면 금액
+            System.out.println( money +"원" );
+        } // for end
+
+//        (* 차량번호 와 이용시간 인덱스가 같다는 가정 )
+//        요금 규정:
+//        기본 요금: 최초 30분까지 1,000원
+//        추가 요금: 30분 초과 시, 매 10분마다 500원씩 추가
+//        일일 최대 요금: 20,000원 (아무리 오래 주차해도 20,000원을 초과할 수 없음)
+//        선언 코드:
+//        String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
+//        int[] usageMinutes = {65, 30, 140, 420};
+//        출력 예시:
+//        210어7125: 65분 주차, 최종 요금: 2500원
+//        142가7415: 30분 주차, 최종 요금: 1000원
+//        888호8888: 140분 주차, 최종 요금: 6500원
+//        931나8234: 420분 주차, 최종 요금: 20000원
+
     } // main end
 } // class end
