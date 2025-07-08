@@ -25,6 +25,15 @@ public class 실습8 { // class start
         boolean result4 = check1.isEven( 3 );
         System.out.println( result4 ); // false
 
+        // [5]
+        Lamp lamp1 = new Lamp();
+        lamp1.turnOn();     // true
+        lamp1.turnOff();    // false
+
+        // [6]
+        Product prod1 = new Product(); // 객체 생성
+        boolean result6 = prod1.sell( 5 );
+        System.out.println( result6 ); // true
 
     } // main end
 } // class end
