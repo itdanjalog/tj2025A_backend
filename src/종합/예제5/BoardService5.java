@@ -27,7 +27,7 @@ public class BoardService5 {
                 System.out.println("============= 게시물 목록 =============");
                 Board[] boards = bs.doGet();
                 for( int index = 0 ; index <= boards.length - 1 ; index++ ){
-                    Board board = boards[index];
+                    Board board = boards[index]; // 배열(여러개)중에 하나 꺼내기
                     if( board != null ){
                         System.out.println("작성자 : " + board.writer );
                         System.out.println("내용 : " + board.content );
