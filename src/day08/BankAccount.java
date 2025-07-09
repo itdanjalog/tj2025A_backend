@@ -17,7 +17,7 @@ public class BankAccount {
     // 리턴값 : 잔액 = int vs 성공/실패 = boolean
     boolean deposit( int money ){
         balance += money; // 입금잔액에 입금액을 누적 더하기 한다.
-        return true; // 실패가 없다는 가정하에 true 이면 성공 의미 부여해서 를 반환한다.
+        return true; //  true 이면 성공 의미 부여해서 를 반환한다.
     } // func end
     // 2) 출금 : 잔액에 출금액 뺀다.
     // 메소드명 : withdraw
