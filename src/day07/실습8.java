@@ -35,6 +35,8 @@ public class 실습8 { // class start
         boolean result6 = prod1.sell( 5 );
         System.out.println( result6 ); // true
 
+
+
     } // main end
 } // class end
 /*
