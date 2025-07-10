@@ -32,6 +32,30 @@ public class 실습9 {
         account1.withdraw( 3000 ); // 3000원을 출금 , 12000
         System.out.println("최종잔액 : "+ account1.balance ); // 최종 잔액
 
+        // [5] Goods 클래스를 만드세요.
+        // *) 변수란? 하나의 자료를 저장(재사용) 할수 있는 메모리공간
+        // *) 자바 변수 규칙 : 타입 변수명 = 자료
+        // *) 타입 : 자료의 종류 , 기본자료형(8가지) vs 참조자료형(그외:클래스/배열)
+        // 1) 기본생성자 객체(인스턴스) 생성
+        Goods goods1 = new Goods();
+        // 2) 매개변수가 있는 생성자 생성
+        Goods goods2 = new Goods("콜라",2000);
+        // 3) 저장된 변수내 객체내 멤버변수 값 호출
+        System.out.println( goods1.name + " \t " + goods1.price );
+        System.out.println( goods2.name + " \t " + goods2.price );
+
+        // [6] Member 클래스를 만드세요.
+        // 1) 한방에 객체를 생성하고 출력하시오.
+        Member m1 = new Member();
+        System.out.println( m1.id + " \t " + m1.isLogin );
+        // + 관례적/주로
+            // -> 서로다른 타입 혹은 서로 다른 의미를 갖는 자료 또는 존재하지 않은 타입은 클래스 정의
+                // 예] Goods , Member 등 자바 회사에서 제공하지 않은 타입/클래스
+                // String , Scanner 등 자바 회사에서 제공하는 클래스
+            // -> 같은 타입 혹은 같은 의미 갖는 자료는 배열 정의
+                // 예1] 가격(int) 여러개 : int[] 가격목록 = new int[100];
+                // 예2] 회원(Member) 여러개 : Member[] 회원목록 = new Member[100];
+                // 가격(int) 재고(int) : class 제품정보{ int 가격; int 재고; }
 
     } // main end
 } // class end
