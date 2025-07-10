@@ -1,10 +1,10 @@
-package day08_수;
+package day09_목;
 
-import day08_수.package1.A;
-import day08_수.package1.B;
-import day08_수.package2.C;
+import day09_목.package1.A;
+import day09_목.package1.B;
+import day09_목.package2.C;
 
-public class Example2_접근제한자 {
+public class Example1_접근제한자 {
     public static void main(String[] args) {
         /*
          * =======================================================================
@@ -26,6 +26,12 @@ public class Example2_접근제한자 {
         // 3. 다른 패키지 클래스(C)의 접근 테스트
         C c_instance = new C();
         c_instance.testAccess();
+
+        // import
+
+        // getter and setter
+
+
     }
 }
 //접근제한자 멤버변수명

@@ -1,6 +1,6 @@
-package day08_수.package2;
+package day09_목.package2;
 
-import day08_수.package1.A;
+import day09_목.package1.A;
 
 // 다른 패키지에 있는 C 클래스
 public class C {

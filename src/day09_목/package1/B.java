@@ -1,4 +1,4 @@
-package day08_수.package1;
+package day09_목.package1;
 
  // 같은 패키지에 있는 B 클래스
 public class B {

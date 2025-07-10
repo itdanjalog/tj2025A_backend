@@ -1,4 +1,4 @@
-package day08_수.package1;
+package day09_목.package1;
 
 // 기준이 되는 A 클래스
 public class A {
