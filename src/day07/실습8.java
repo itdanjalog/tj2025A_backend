@@ -1,6 +1,7 @@
 package day07;
 
 public class 실습8 { // class start
+
     public static void main(String[] args) { // main start
 
         // [1]
@@ -34,6 +35,19 @@ public class 실습8 { // class start
         Product prod1 = new Product(); // 객체 생성
         boolean result6 = prod1.sell( 5 );
         System.out.println( result6 ); // true
+
+        // [문제 7] Visualizer 클래스를 만드세요.
+        Visualizer visual = new Visualizer();
+        String result = visual.getStars( 5 );
+        System.out.println( result );
+
+        //  [문제 8] ParkingLot 클래스를 만드세요.
+        ParkingLot parkingLot = new ParkingLot();
+        int result1 = parkingLot.calculateFee(65);
+        int result2 = parkingLot.calculateFee(140);
+        System.out.println( result1 );
+        System.out.println( result2 );
+
 
     } // main end
 } // class end
