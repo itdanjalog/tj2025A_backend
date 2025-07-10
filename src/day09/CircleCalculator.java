@@ -6,7 +6,9 @@ public class CircleCalculator {
     // 2. 생성자
     // 3. 메소드
     double printCircleArea (int 반지름){
-        return 반지름 * 반지름 * PI;
+        double 원넓이 = 반지름 * 반지름 * PI;
+        System.out.println( 원넓이 );
+        return 원넓이;
     } // func end
 } // class end
 
