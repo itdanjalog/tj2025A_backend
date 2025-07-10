@@ -8,15 +8,18 @@ public class 실습10 {
         // 직접적인 멤버변수 접근이 아닌 메소드를 통한 멤버변수
         member.setId( "admin" ); // 수정
         System.out.println( member.getId() ); // 호출
-
         // [2]
         Score score = new Score();
         score.setScore( 85 );   // 대입 가능
         score.setScore( 120 );  // 대입 대신에 출력문
-
         // [3]
         BankAccount account = new BankAccount("123-456");
         System.out.println( account.getAccountNumber() );
+        // [4]
+        CircleCalculator calculator = new CircleCalculator();
+        calculator.printCircleArea( 5 );
+        // calculator.PI = 5.12; // final 수정 불가능
+
 
 
     } // main end
