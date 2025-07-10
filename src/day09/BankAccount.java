@@ -4,7 +4,7 @@ public class BankAccount {
     // 1. 멤버변수
     private String accountNumber;
     // 2. 생성자
-    // * 빈공간(마우스)오른쪽클릭 -> [생성] -> [생성자]
+    // * 해당 클래스내 빈공간(마우스)오른쪽클릭 -> [생성] -> [생성자]
     public BankAccount( String accountNumber ){
         this.accountNumber = accountNumber;
     }
