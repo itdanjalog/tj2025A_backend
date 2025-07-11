@@ -4,6 +4,13 @@ import 종합.예제7.model.dto.BoardDto;
 
 // (역할) 실제 데이터가 존재하는 데이터에 접근하는 기능(CRUD)
 public class BoardDao {
+    // * (싱글톤)
+    private BoardDao(){}
+    private static final BoardDao dao = new BoardDao();
+    public static BoardDao getInstance(){
+        return dao;
+    }
+
     // * 데이터베이스 : 추후에 데이터베이스로 변경할 예정
     private BoardDto[] boardDB = new BoardDto[100];
 

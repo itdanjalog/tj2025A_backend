@@ -1,5 +1,7 @@
 package 종합.예제7.view;
 
+import 종합.예제7.controller.BoardController;
+
 import java.util.Scanner;
 
 // (역할) 게시물 관련 입출력 클래스
@@ -14,6 +16,9 @@ public class BoardView {
 
     // (*) 여러 메소드에서 사용할 입력 객체 를 멤버변수로 선언
     private Scanner scan = new Scanner( System.in );
+
+    // - Controller 객체 가져오기 : 멤버변수
+    private BoardController boardController = BoardController.getInstance();
 
     // (1) 메인view : 최초로 보이는 화면
     public void index(){
@@ -31,8 +36,13 @@ public class BoardView {
     // (2) 등록view
     public void boardWrite(){
         System.out.print("내용: ");
+        String content = scan.next();
         System.out.print("작성자 : ");
-        System.out.println("[안내] 글쓰기 성공");
+        String writer = scan.next();
+        boolean result = boardController.boardWrite( content,writer );
+        // - 입력받은 값들을 controller 전달후 반환값 저장
+        if( result ){ System.out.println("[안내] 글쓰기 성공"); }
+        else{ System.out.println("[경고] 글쓰기 실패"); }
     } // func end
 
     // (3) 조회view
