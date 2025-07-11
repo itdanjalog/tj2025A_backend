@@ -20,7 +20,19 @@ public class 실습10 {
         calculator.printCircleArea( 5 );
         // calculator.PI = 5.12; // final 수정 불가능
 
+        // [5]
+        TicketMachine t1 = new TicketMachine(); // 인스턴스(객체) 생성
+        TicketMachine t2 = new TicketMachine(); // 인스턴스(객체) 생성
+        TicketMachine t3 = new TicketMachine(); // 인스턴스(객체) 생성
+        t1.issueTicket();   // 인스턴스(객체) 메소드 호출 :발권1
+        t1.issueTicket();   // 인스턴스(객체) 메소드 호출 :발권1
+        t2.issueTicket();   // 변수명.메소드명() : 인스턴스(객체) 메소드 호출 :발권2
+        TicketMachine.printTotalTickets(); // 클래스명.static메소드 : 정적메소드 호출
 
+        // [6]
+        System.out.println( GameConfig.MAX_HP );
+        System.out.println( GameConfig.MAX_LEVEL );
+        System.out.println( GameConfig.GAME_TITLE );
 
     } // main end
 
