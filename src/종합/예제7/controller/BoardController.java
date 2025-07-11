@@ -24,5 +24,13 @@ public class BoardController {
     }
 
     // 2. 조회 처리 메소드
+    public BoardDto[] boardPrint() {
+        BoardDto[] result = boardDao.boardPrint(); // - DAO 에게 게시물 조회 요청후 반환값을 저장한다.
+        return result; // dao에게 받은 결과를 반환한다.
+    }
+} // class end
 
-}
+
+
+
+

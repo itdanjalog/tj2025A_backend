@@ -1,6 +1,7 @@
 package 종합.예제7.view;
 
 import 종합.예제7.controller.BoardController;
+import 종합.예제7.model.dto.BoardDto;
 
 import java.util.Scanner;
 
@@ -48,9 +49,15 @@ public class BoardView {
     // (3) 조회view
     public void boardPrint(){
         System.out.println("============= 게시물 목록 =============");
-        System.out.println("작성자 : ");
-        System.out.println("내용 : ");
-        System.out.println("------------------------------------");
+        BoardDto[] result = boardController.boardPrint(); // controller 에게 조회를 요청하고 결과를 저장한다.
+        for( int i = 0 ; i < result.length ; i++ ){
+            BoardDto boardDto = result[i];
+            if( boardDto != null ){
+                System.out.println("작성자 : " + boardDto.getWriter() );
+                System.out.println("내용 : " + boardDto.getContent() );
+                System.out.println("------------------------------------");
+            } // if end
+        } // for end
     } // func end
 
 } // class end
