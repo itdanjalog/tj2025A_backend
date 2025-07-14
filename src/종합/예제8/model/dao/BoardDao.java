@@ -26,4 +26,9 @@ public class BoardDao {
         return result;
     }
 
-}
+    // 4) 전체조회 기능 구현
+    public ArrayList< BoardDto > getBoardList( ){
+        return boardDB;
+    }
+
+} // class end
