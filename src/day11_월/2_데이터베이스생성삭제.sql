@@ -38,7 +38,7 @@ drop database if exists mydb1226;
 # [5] db server 내 여러개 데이터베이스 중에 사용/활성화 할 데이터베이스 선택 
 use mydb1226;
 
-# 실습1 : 아래와 같이 순서대로 SQL코드를 작성하고 실행하시오. 
+# 예제1 : 아래와 같이 순서대로 SQL코드를 작성하고 실행하시오.
 drop database if exists test1; 	-- 1. 'test1' 이름의 데이터베이스가 존재하면 삭제하기 SQL 작성 
 create database test1; 			-- 2. 'test1' 이름의 데이터베이스 생성하기 SQL 작성 
 show databases;					-- 3. 서버의 전체 데이터베이스 목록 확인 SQL 작성 

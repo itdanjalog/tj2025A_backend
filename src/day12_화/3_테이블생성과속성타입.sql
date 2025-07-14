@@ -41,7 +41,7 @@ show tables; # 전체 테이블 목록 조회
 # [6] 특정한 테이블 조회 
 select * from testtable3;
 
-# 실습1 : boardservice9 의 DB 설계 하시오.
+# 예제1 : boardservice9 의 DB 설계 하시오.
 # 단계1 : DB서버의 DB 만들기
 create database boardservice9;
 # 단계2 : 지정한 DB의 테이블 만들기 위해서 DB 활성화
@@ -53,7 +53,7 @@ create table board(
 	writer varchar(30)			# 임의로 작성자는 최대 30글자로 설계 		# 자바: private String writer;
 ); 
 
-# 실습2 : day09 패키지의 WaitingService 의 DB 설계 하시오.
+# 예제2 : day09 패키지의 WaitingService 의 DB 설계 하시오.
 create database waitingservice;				# 단계1 : DB서버의 DB 만들기 
 use waitingservice;							# 단계2 : DB서버의 사용할 DB 활성화 하기
 create table waiting(						# 단계3 : 활성화 한 DB내 테이블를 적절한 타입으로 선언한다.
@@ -78,7 +78,7 @@ create table testtable5(
     constraint foreign key( FK필드명1 ) references testtable4(PK필드명5) 
     -- 지정한 필드를 fk필드로 설정 하고 참조할 pk필드가 위치한 테이블명과 pk필드명을 작성한다. 
 );
-# 실습1 : boardservice7 에서 회원제 게시판 DB 설계하시오. 회원테이블 , 게시판테이블 => 회원이 존재해야 게시물이 존재한다. 즉] 회원(PK) 게시물(FK)
+# 예제3 : boardservice7 에서 회원제 게시판 DB 설계하시오. 회원테이블 , 게시판테이블 => 회원이 존재해야 게시물이 존재한다. 즉] 회원(PK) 게시물(FK)
 create database boardservice7;	use boardservice7;
 create table member( # 회원 테이블
 	mno int auto_increment	,	 -- 회원번호 는 자동번호를 부여하기 위해 auto_increment 제약조건 선택. / 회원번호 는 최대 20억 이상이 될 경우가 없을것 같아서 int타입 선택.
