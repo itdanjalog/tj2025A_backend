@@ -23,7 +23,7 @@ public class BoardDao {
         boardDB.add( boardDto );
             // 3) 성공시 result 에 성공의 의미 'true' 대입
         result = true;
-        return true;
+        return result;
     }
 
 }
