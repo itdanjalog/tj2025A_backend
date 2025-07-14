@@ -57,7 +57,7 @@
         5. accounts and roles 비밀번호 지정후 -> [next] -> [next] -> [next] -> [excute] -> [finish]
             password : 1234 ( 학원 이므로 1234 해주세요. )
         6. -> [next] -> [finish]
-    [ 정상 실행 여부 확인 ]
+    [ workbench 이용하여 설치된 DB 서버에 접속하기 ]
         1. 윈도우메뉴 -> MySQL Workbench 8.0 CE 바탕화면 바로바기 만들기
         2. MySQL Workbench 8.0 실행
         3. 메인화면에 [ Local instance MySQL80 ] 구역이 있으면 성공 --> 클릭 --> 패스워드 입력후 [ok]
