@@ -1,4 +1,4 @@
-package day13_수.step1;
+package day14_목.step1;
 
 public interface InterfaceTest {
 	

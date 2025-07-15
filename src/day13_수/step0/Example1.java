@@ -1,4 +1,4 @@
-package day12_화;
+package day13_수.step0;
 
 // [1] 동물 클래스 
 class 동물{

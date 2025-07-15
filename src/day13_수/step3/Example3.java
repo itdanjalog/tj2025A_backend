@@ -1,4 +1,4 @@
-package day12_화.day16.step3;
+package day13_수.step3;
 
 class Parent{ // 상위 클래스 
 	String filed1;

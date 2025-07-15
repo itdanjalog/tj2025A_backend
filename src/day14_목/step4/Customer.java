@@ -1,4 +1,4 @@
-package day13_수.step4;
+package day14_목.step4;
 
 // pulic class Customer extends 클래스명{}
 public class Customer implements Buy , Sell {

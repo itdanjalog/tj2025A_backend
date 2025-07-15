@@ -1,4 +1,4 @@
-package day13_수.step5;
+package day14_목.step5;
 
 interface InterFaceTest2{
 	// 인터페이스의 구성멤버

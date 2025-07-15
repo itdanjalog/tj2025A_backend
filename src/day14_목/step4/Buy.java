@@ -1,4 +1,4 @@
-package day13_수.step4;
+package day14_목.step4;
 
 public interface Buy {
 	// + 추상메소드 : { } 구현부가 없는 메소

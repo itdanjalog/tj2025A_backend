@@ -1,4 +1,4 @@
-package day14_목.step1_예외처리;
+package day15_금.step1_예외처리;
 
 import java.io.IOException;
 
