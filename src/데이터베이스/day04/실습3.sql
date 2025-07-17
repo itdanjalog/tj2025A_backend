@@ -85,19 +85,36 @@ select title , price , stock from books where price >= 15000 and stock >= 10; # 
 # select title , genre from books where genre = '컴퓨터' or genre = '경제'; 	# 방법1) OR 연산자 사용 
 select title , genre from books where genre in( '컴퓨터' , '경제' ); 			# 방법2) IN 연산자 사용
 
-
-
-
 -- [문제 5] books 테이블에서 재고(stock) 정보가 없는(NULL) 도서의 title을 조회하세요.
+select title from books where stock is null;	# = null 대신에 is null 사용하자. 
+
 -- [문제 6] books 테이블에서 도서명(title)에 '코리아' 라는 단어가 포함된 도서를 조회하세요. (LIKE 사용)
+# select * from books where title = '코리아'; 	# (1) title = '코리아' 		: title이 코리아 이면  
+select * from books where title like '%코리아%';	# (2) title like '%코리아%'   : title이 코리아 가 포함된  
+
 -- [문제 7] books 테이블에서 저자명(author)이 '김'으로 시작하는 3글자인 도서의 title과 author를 조회하세요. (LIKE 사용)
+# select * from books where author like '김%'; 	# 김으로 시작하는 N글자 # % : 모든 문자 대응(글자수 상관) 
+select title, author from books where author like '김__'; 	# 김으로 시작하는 3글자 # _ : 모든 문자 대응(_개수만큼 대응)
+
 -- [문제 8] books 테이블의 모든 도서 정보를 가격(price)이 비싼 순(내림차순)으로 정렬하여 조회하세요.
+select * from books order by price desc; # order by 속성명 asc(오름차순)/desc(내림차순)
+
 -- [문제 9] books 테이블의 모든 도서 정보를 출판일(pub_date)이 오래된 순(오름차순)으로 정렬하되, 출판일이 같다면 제목(title)의 가나다순(오름차순)으로 정렬하세요.
--- [문제 10] books 테이블에서 가격이 가장 저렴한 도서 3개의 title과 price를 조회하세요.
+select * from books order by pub_date asc , title asc;
+
+-- [문제 10] books 테이블에서 가격이 가장 저렴한 도서 3개의 title과 price를 조회하세요. ( limit )
+# select * from books order by price asc; # 1. 가격을 오름차순(낮은순) 으로 정렬 
+select title , price from books order by price asc limit 3; # 2. 정렬후 위에서 3개만 제한
+
+
+ 
+
+
+
 -- [문제 11] books 테이블에서 가격(price)이 14000원에서 18000원 사이인 도서의 title과 price를 조회하세요. (BETWEEN 연산자 사용)
 -- [문제 12] books 테이블에서 도서명(title)에 '자' 라는 글자가 포함된 도서의 title과 author를 조회하세요.
 -- [문제 13] books 테이블에서 장르(genre)가 '소설'과 '역사'가 아닌 도서들의 모든 정보를 조회하세요. (NOT IN 사용)
--- [문제 14] books 테이블에서 장르가 '컴퓨터'이고 가격이 20000원 미만이며, 재고가 20권 이상인 도서의 title을 조회하세요.
+-- [문제 14] books 테이블에서 장르가 '컴퓨터'이고 가격이 20000원 미만이며, 재고가 20권 이상인 도서의 title을 조회하세요. (*레코드 결과 0개* )
 -- [문제 15] books 테이블의 모든 도서 정보를 장르(genre)의 가나다순(오름차순)으로 정렬하되, 같은 장르 내에서는 가격(price)이 비싼 순(내림차순)으로 정렬하세요.
 -- [문제 16] books 테이블에서 저자명(author)이 '이'씨가 아닌 도서의 title과 author를 조회하세요.
 -- [문제 17] books 테이블에서 재고(stock) 정보가 있는(NULL이 아닌) 도서의 title과 stock을 조회하세요.
