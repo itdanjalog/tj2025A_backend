@@ -6,6 +6,7 @@
 
 [ 샘플 ] 문제 혹은 카카오톡방에 샘플코드를 실행후 아래 문제들의 SQL 작성하여 실행하시오.
 
+-- 아래 샘플 SQL 전체 실행 : ctrl+shift+enter
 DROP DATABASE IF EXISTS exam3;
 CREATE DATABASE exam3;
 USE exam3;
@@ -72,7 +73,6 @@ INSERT INTO orders VALUES(NULL, 1010, '김민준', 1, '2023-07-03');
 INSERT INTO orders VALUES(NULL, 1004, '최수아', 2, '2023-07-10');
 -- =======================================================================
 
-
 -- [문제 1] books 테이블에서 가격(price)이 20000원 이상인 도서의 title과 price를 조회하세요.
 -- [문제 2] books 테이블에서 장르(genre)가 '소설'이 아닌 도서의 모든 정보를 조회하세요.
 -- [문제 3] books 테이블에서 가격(price)이 15000원 이상이고, 재고(stock)가 10권 이상인 도서의 title, price, stock을 조회하세요.
@@ -83,6 +83,16 @@ INSERT INTO orders VALUES(NULL, 1004, '최수아', 2, '2023-07-10');
 -- [문제 8] books 테이블의 모든 도서 정보를 가격(price)이 비싼 순(내림차순)으로 정렬하여 조회하세요.
 -- [문제 9] books 테이블의 모든 도서 정보를 출판일(pub_date)이 오래된 순(오름차순)으로 정렬하되, 출판일이 같다면 제목(title)의 가나다순(오름차순)으로 정렬하세요.
 -- [문제 10] books 테이블에서 가격이 가장 저렴한 도서 3개의 title과 price를 조회하세요.
+-- [문제 11] books 테이블에서 가격(price)이 14000원에서 18000원 사이인 도서의 title과 price를 조회하세요. (BETWEEN 연산자 사용)
+-- [문제 12] books 테이블에서 도서명(title)에 '자' 라는 글자가 포함된 도서의 title과 author를 조회하세요.
+-- [문제 13] books 테이블에서 장르(genre)가 '소설'과 '역사'가 아닌 도서들의 모든 정보를 조회하세요. (NOT IN 사용)
+-- [문제 14] books 테이블에서 장르가 '컴퓨터'이고 가격이 20000원 미만이며, 재고가 20권 이상인 도서의 title을 조회하세요.
+-- [문제 15] books 테이블의 모든 도서 정보를 장르(genre)의 가나다순(오름차순)으로 정렬하되, 같은 장르 내에서는 가격(price)이 비싼 순(내림차순)으로 정렬하세요.
+-- [문제 16] books 테이블에서 저자명(author)이 '이'씨가 아닌 도서의 title과 author를 조회하세요.
+-- [문제 17] books 테이블에서 재고(stock) 정보가 있는(NULL이 아닌) 도서의 title과 stock을 조회하세요.
+-- [문제 18] books 테이블에서 출판일(pub_date)이 가장 최신인 도서부터 4번째에서 6번째까지의 도서 3개의 title과 pub_date를 조회하세요. (LIMIT 오프셋 사용)
+-- [문제 19] books 테이블에서 저자가 '김호연'이거나 장르가 '과학'인 도서의 모든 정보를 조회하세요.
+-- [문제 20] books 테이블에서 도서명(title)이 '점'으로 끝나는 도서의 title과 genre를 조회하세요.
 
 -- [문제 11] orders 테이블에 기록된 총 주문 건수는 몇 개인지 조회하세요.
 -- [문제 12] books 테이블에 있는 모든 도서의 평균 가격(price)을 '평균단가' 라는 별칭으로 조회하세요.
@@ -96,8 +106,6 @@ INSERT INTO orders VALUES(NULL, 1004, '최수아', 2, '2023-07-10');
 -- [문제 20] '김민준'과 '이서연' 고객에 대해, 각 고객별 총 주문 수량(order_qty의 합계)을 조회하세요. 단, 총 주문 수량이 4권 이상인 고객만 조회하세요.
 
 */
-
-
 -- ==================== Part 1 정답 ====================
 
 -- [문제 1 정답]
@@ -130,36 +138,69 @@ SELECT * FROM books ORDER BY pub_date ASC, title ASC;
 -- [문제 10 정답]
 SELECT title, price FROM books ORDER BY price ASC LIMIT 3;
 
+-- [문제 11 정답]
+SELECT title, price FROM books WHERE price BETWEEN 14000 AND 18000;
+
+-- [문제 12 정답]
+SELECT title, author FROM books WHERE title LIKE '%자%';
+
+-- [문제 13 정답]
+SELECT * FROM books WHERE genre NOT IN ('소설', '역사');
+
+-- [문제 14 정답]
+SELECT title FROM books WHERE genre = '컴퓨터' AND price < 20000 AND stock >= 20;
+
+-- [문제 15 정답]
+SELECT * FROM books ORDER BY genre ASC, price DESC;
+
+-- [문제 16 정답]
+SELECT title, author FROM books WHERE author NOT LIKE '이%';
+
+-- [문제 17 정답]
+SELECT title, stock FROM books WHERE stock IS NOT NULL;
+
+-- [문제 18 정답]
+SELECT title, pub_date FROM books ORDER BY pub_date DESC LIMIT 3, 3;
+
+-- [문제 19 정답]
+SELECT * FROM books WHERE author = '김호연' OR genre = '과학';
+
+-- [문제 20 정답]
+SELECT title, genre FROM books WHERE title LIKE '%점';
+
 
 -- ==================== Part 2 정답 ====================
 
--- [문제 11 정답]
+-- [문제 21 정답]
 SELECT COUNT(*) AS 총주문건수 FROM orders;
 
--- [문제 12 정답]
+-- [문제 22 정답]
 SELECT AVG(price) AS 평균단가 FROM books;
 
--- [문제 13 정답]
+-- [문제 23 정답]
 SELECT SUM(order_qty) AS 총주문수량 FROM orders WHERE customer = '김민준';
 
--- [문제 14 정답]
+-- [문제 24 정답]
 SELECT genre, COUNT(*) AS 도서수 FROM books GROUP BY genre;
 
--- [문제 15 정답]
+-- [문제 25 정답]
 SELECT book_id, SUM(order_qty) AS 총주문권수 FROM orders GROUP BY book_id;
 
--- [문제 16 정답]
-SELECT AVG(price) FROM books WHERE stock < 5;
-
--- [문제 17 정답]
-SELECT book_id, COUNT(book_id) AS 주문횟수 FROM orders GROUP BY book_id HAVING COUNT(book_id) >= 2;
-
--- [문제 18 정답]
-SELECT customer, SUM(order_qty) AS 총주문수량 FROM orders GROUP BY customer HAVING SUM(order_qty) > 3;
-
--- [문제 19 정답]
-SELECT author, COUNT(*) AS 출판도서수 FROM books GROUP BY author HAVING COUNT(*) >= 2;
-
--- [문제 20 정답]
+-- [문제 26 정답]
 -- 해설: WHERE 절에서 IN 연산자로 특정 고객들을 먼저 필터링하고, GROUP BY로 그룹화한 뒤, HAVING 절을 사용해 집계 함수(SUM)의 결과에 대한 조건을 적용합니다.
 SELECT customer, SUM(order_qty) AS 총주문수량 FROM orders WHERE customer IN ('김민준', '이서연') GROUP BY customer HAVING SUM(order_qty) >= 4;
+
+-- [문제 27 정답]
+SELECT AVG(price) FROM books WHERE stock < 5;
+
+-- [문제 28 정답]
+SELECT book_id, COUNT(book_id) AS 주문횟수 FROM orders GROUP BY book_id HAVING COUNT(book_id) >= 2;
+
+-- [문제 29 정답]
+SELECT customer, SUM(order_qty) AS 총주문수량 FROM orders GROUP BY customer HAVING SUM(order_qty) > 3;
+
+-- [문제 30 정답]
+SELECT author, COUNT(*) AS 출판도서수 FROM books GROUP BY author HAVING COUNT(*) >= 2;
+
+
+

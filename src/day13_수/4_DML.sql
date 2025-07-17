@@ -10,7 +10,7 @@ use mydb0102;						# -- 데이터베이스 활성화
 create table table1(
 	mno int auto_increment,
 	mname varchar(30) not null unique ,
-	mcount int , 
+	mcount int default 2,
 	constraint primary key( mno )
 );
 # DML : 데이터베이스 조작어
