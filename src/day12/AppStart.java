@@ -12,7 +12,7 @@ public class AppStart {
         // [ 동진 ] 로그인 테스트 : 관리자 로그인 실패 했을때 테스트
         UserController.getInstance().로그인( "admin" , "0000" );
 
-        // [ 동진 ] 로그인 테스트 : 관리자 로그인 성공 했을때 테스트
+        // [ 동진 ] 로그인 테스트 : 일반 로그인 성공 했을때 테스트
         UserController.getInstance().로그인( "jone2000" , "1234" );
 
         // [ 동진 ] 로그아웃 테스트
