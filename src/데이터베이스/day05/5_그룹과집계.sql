@@ -81,6 +81,24 @@ select count(*) from buy;
 # (5) 회원아이디 별 구매횟수 조회 
 select mid , count( * )  from buy group by mid;
 
+# [3] having : 그룹별(후) 조건 : 별칭o vs where 그룹(전) 조건 : 별칭x
+# 1. 구매수량이 3 초과 하는 회원아이디 별 레코드 조회
+select * from buy where bamount > 3 ;
+select bamount as 수량 from buy where 수량 > 3;
+# 2. 회원아이디별 총구매금액(집계) 이 1000 초과 인 레코드 조회 
+select mid , sum( bamount * bprice ) from buy group by mid having sum( bamount * bprice ) >=1000;
+select mid , sum( bamount * bprice ) as 총구매금액 from buy 
+		group by mid having 총구매금액 >=1000; # 실행 가능 : 별칭 이용한 
+select mid , sum( bamount * bprice ) as 총구매금액 from buy where 총구매금액 >= 1000
+		group by mid; # 실행 불가능 
+select count(*) from buy where count(*) > 3; # 실행 불가능 
+
+# [*] select 키워드 간의 작성 규칙
+# select 속성명 from 테이블명 where 일반조건 group by 그룹속성명 having 그룹조건 order by 정렬속성명 asc limit 개수 
+# [*] 처리 순서 
+# select [3] from [1] where [2] group by [4] having [5] order by [6] limit [7]
+
+
 
 
 
