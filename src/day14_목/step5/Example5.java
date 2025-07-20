@@ -40,6 +40,17 @@ public class Example5 {
 		
 		// [*] 인터페이스타입은 new 할수없다.즉]인스턴스생성 불가능.
 		// InterFaceTest2 inter = new InterFaceTest2();
+
+		// - 익명 구현체
+		InterFaceTest2 tool = new InterFaceTest2() {
+			@Override
+			public void method() {
+				System.out.println("aaa");
+			}
+		};
+
+		tool.method();
+
 		
 	} // main end 
 } // c end 
