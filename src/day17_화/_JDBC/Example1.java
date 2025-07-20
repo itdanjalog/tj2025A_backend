@@ -1,4 +1,4 @@
-package day15_금.step2_JDBC;
+package day17_화._JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

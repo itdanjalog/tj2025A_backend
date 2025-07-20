@@ -1,4 +1,4 @@
-package day15_금.step1_예외처리;
+package day16_월._예외처리;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -1,0 +1,41 @@
+[ .jar ]
+	1. java Archive : 자바의 여러개의 클래스 파일로 구성
+	2. 배포, 라이브러리 등등
+	3. 생성방법
+		- main 함수 실행 후 <console> 상단에 실행된 클래스명 확인
+		1. 프로젝트 폴더 오른쪽 클릭 
+		2. [Export ] 
+		3. [JAVA] -> [ RUNNABLE JAR FILE ] 선택 -> [NEXT]
+		4. 
+			launch configuration : .jar 만들기 위한 클래스 선택 
+			export destination : .jar 저장할 폴더 선택 ( 임의 )
+				- C:\Users\tj-bu-702-teacher\Desktop\boardservice10.jar
+			[ finish ]
+
+[ .exe ]   jar --> exe 변환 
+	1. launch4j 프로그램 설치 : https://sourceforge.net/projects/launch4j/files/launch4j-3/3.50/
+	2. [launch4j-3.50-win32.exe] 다운로드 클릭
+	3. 설치 --> 실행 
+	4. 상단 메뉴에
+		[ Basic ] 탭 
+			Output file	: .exe 파일을 저장할 경로 
+				C:\Users\tj-bu-702-teacher\Desktop\boardservice10.exe
+			jar			: .exe 파일로 만들 .jar 파일의 경로 
+				C:\Users\tj-bu-702-teacher\Desktop\boardservice10.jar
+			*ICON : 영문파일명 만 가능.
+				- 이미지파일 --> ico파일 변환
+				https://convertio.co/kr/png-ico/
+		[ Header ] 탭 
+			Header type : console
+		[ JRE ] 탭 
+			MIN JRE version : 1.8
+	
+	5. 상단 메뉴에 톱니바퀴[아이콘] 클릭 -> 설정파일 여부(임의저장) -> 하단 log창 -> Successfully 출력되면 성공 
+			
+			
+			
+			
+			
+			
+			
+			

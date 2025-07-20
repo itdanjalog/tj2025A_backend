@@ -1,3 +1,16 @@
+ 07월 21일 월	39		상속/인터페이스 복습	예외처리 	예외처리 / 문제	파일처리	파일처리 / CSV / 문제	boardService9	boardService9
+
+ 07월 22일 화	40		집합	집합 / 문제	JDBC	JDBC / 문제	boardService10	boardService10	boardService10
+
+ 07월 23일 수	41		기본클래스	기본클래스	기본클래스 / 문제	스레드	스레드	스레드 / 문제	과제	과제
+
+ 07월 24일 목	42		제네릭	제네릭 / 문제	컬렉션프레임워크	컬렉션프레임워크	컬렉션프레임워크 / 문제	boardService11	boardService11	boardService11
+    - https://github.com/itdanjalog/tj2024b_web1/tree/master/tj2024b_web1/src/main/java/day07
+    - boardService11( DTO 없이 MAP 이용 )
+
+ 07월 25일 금	43		공공데이터	공공데이터 / 문제	크롤링	크롤링 / 문제	과제	과제	과제	과제
+
+----------------------------------------------------------------------------------------------------------------------
 3[월] 변수 , 연산자
 4[화] 실습2:타입변환5개 , 실습2:입출력5개 , 실습3:연산자:10개 , 조건문 ,
 * 연산자 안보고 적기
@@ -106,3 +119,4 @@ boardService8_settergetter , Dto
 boardService9_mvc패턴
 [금]
 boardService10_컬렉션프레임워크
+
