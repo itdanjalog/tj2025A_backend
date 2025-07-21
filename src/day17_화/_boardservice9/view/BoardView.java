@@ -6,6 +6,7 @@ import day17_화._boardservice9.controller.BoardController;
 import day17_화._boardservice9.model.BoardDto;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BoardView {
@@ -22,14 +23,23 @@ public class BoardView {
     Scanner scan = new Scanner( System.in); // 입력객체
 
     public void mainPage(){ // view 시작 함수
+
         while (true){
-            System.out.print("1.게시물등록 2.게시물출력 : ");
-            int choose = scan.nextInt();
-            if( choose == 1 ){
-                boardWrite();
-            }
-            else if( choose == 2 ){
-                boardPrint();
+            try {
+                System.out.print("1.게시물등록 2.게시물출력 : ");
+                int choose = scan.nextInt();
+                if (choose == 1) {
+                    boardWrite();
+                } else if (choose == 2) {
+                    boardPrint();
+                }else{
+                    System.out.println("없는 번호 입니다.");
+                }
+            }catch ( InputMismatchException e ){
+                System.out.println("입력된 값을 알수 없습니다.");
+                scan = new Scanner(System.in);
+            }catch ( Exception e ){
+                System.out.println("알수 없는 예외가 발생 했습니다.");
             }
         } // w end
     } // m end
