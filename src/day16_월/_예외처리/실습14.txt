@@ -1,4 +1,4 @@
-[JAVA] 실습14 : 예외 처리 (개정판)
+[JAVA] 실습14 : 예외 처리
 [ 문제 ] 아래 예외 처리 관련 문제를 해결하시오.
 [ 제출방법 ] 코드가 작성된 파일이 위치한 깃허브 상세 주소를 제출하시오.
 
@@ -56,22 +56,3 @@ Thread.sleep(1000); // 1초간 프로그램 일시정지
 필요코드
 int[] arr = new int[2];
 System.out.println(arr[5]);
-
-[문제 9] 사용자 정의 예외 만들기
-1. Exception 클래스를 상속받는 InvalidAgeException 클래스를 만드세요.
-2. 나이를 매개변수로 받아, 19세 미만이면 InvalidAgeException을 발생시키는(throw new ...) checkAge(int age) 메소드를 만드세요.
-3. main 함수에서 checkAge(15)를 호출하고, try-catch로 직접 만든 예외를 처리하여 "미성년자는 접근할 수 없습니다." 메시지를 출력하세요.
-필요코드
-class InvalidAgeException extends Exception {
-    public InvalidAgeException(String message) {
-        super(message);
-    }
-}
-
-// 2. 예외를 발생시키는 메소드
-public void checkAge(int age) throws InvalidAgeException {
-    if (age < 19) {
-        throw new InvalidAgeException("나이가 19세 미만입니다.");
-    }
-    System.out.println("성인입니다.");
-}
