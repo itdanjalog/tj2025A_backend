@@ -1,4 +1,4 @@
-package day16_월._boardservice9.model;
+package day17_화._boardservice9.model;
 
 public class BoardDto {
     private String content;

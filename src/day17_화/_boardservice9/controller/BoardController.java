@@ -1,8 +1,8 @@
-package day16_월._boardservice9.controller;
+package day17_화._boardservice9.controller;
 
 
-import day16_월._boardservice9.model.BoardDao;
-import day16_월._boardservice9.model.BoardDto;
+import day17_화._boardservice9.model.BoardDao;
+import day17_화._boardservice9.model.BoardDto;
 
 import java.util.ArrayList;
 

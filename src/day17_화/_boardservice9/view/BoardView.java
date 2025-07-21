@@ -1,9 +1,9 @@
-package day16_월._boardservice9.view;
+package day17_화._boardservice9.view;
 
 
 
-import day16_월._boardservice9.controller.BoardController;
-import day16_월._boardservice9.model.BoardDto;
+import day17_화._boardservice9.controller.BoardController;
+import day17_화._boardservice9.model.BoardDto;
 
 import java.util.ArrayList;
 import java.util.Scanner;

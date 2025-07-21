@@ -1,7 +1,7 @@
-package day16_월._boardservice9;
+package day17_화._boardservice9;
 
 
-import day16_월._boardservice9.view.BoardView;
+import day17_화._boardservice9.view.BoardView;
 
 public class AppStart {
     public static void main(String[] args) {
