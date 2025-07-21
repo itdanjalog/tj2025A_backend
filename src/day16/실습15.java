@@ -1,6 +1,12 @@
 package day16;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class 실습15 {
+
 }
 /*
 [JAVA] 실습15 : 파일 처리
