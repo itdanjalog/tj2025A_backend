@@ -31,7 +31,6 @@ public class Example3 {
         }catch ( IOException e ){
             System.out.println("입출력 도중에 오류가 발생했다." + e );
         }
-
         // [2] 파일 읽기
         // (1) 경로는 위에서 선언한 path 그대로 사용.
         // (2) 파일 입력 객체 생성 * 무조건 (FileNotFoundException) 일반예외 발생
