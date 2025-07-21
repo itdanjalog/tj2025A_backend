@@ -1,56 +1,67 @@
-[JAVA] 실습16 : JDBC
+[JAVA] 실습16 : JDBC 제품 관리
 [ 문제 ] 아래 JDBC 관련 문제를 해결하시오.
 [ 제출방법 ] 코드가 작성된 파일이 위치한 깃허브 상세 주소를 제출하시오.
 
 [ 사전 준비 ]
-MySQL 워크벤치에서 새로운 데이터베이스(예: exam16)를 생성하고, use exam16;를 실행하세요.
-아래 SQL을 실행하여 실습에 사용할 members 테이블을 생성하세요.
-CREATE TABLE members (
-    id INT AUTO_INCREMENT,
-    name VARCHAR(50),
-    age INT,
-    CONSTRAINT PRIMARY KEY (id)
+
+MySQL 워크벤치에서 새로운 스키마(예: exam16)를 생성하고, use exam16;를 실행하세요.
+
+아래 SQL을 실행하여 실습에 사용할 product 테이블을 생성하세요.
+
+CREATE TABLE product (
+    pno INT AUTO_INCREMENT,
+    pname VARCHAR(50) NOT NULL,
+    pprice INT NOT NULL,
+    CONSTRAINT PRIMARY KEY(pno)
 );
 
-[문제 1] 데이터베이스 연결
-1. com.mysql.cj.jdbc.Driver 클래스를 로드하세요.
-2. DriverManager.getConnection() 메소드를 사용하여 exam16 데이터베이스에 연결하세요.
-3. 연결에 성공하면 "[안내] DB 연동 성공" 메시지를, 실패하면 예외 메시지를 출력하세요.
+[문제 1] DTO 클래스 설계
+1. product 테이블의 레코드 정보를 담을 ProductDto 클래스를 만드세요.
+2. pno, pname, pprice에 해당하는 멤버 변수를 private으로 선언하세요.
+3. 기본 생성자, 모든 필드를 초기화하는 생성자, 그리고 각 필드의 Getter/Setter 메소드를 만드세요.
 
-[문제 2] 데이터 삽입 (INSERT)
-1. members 테이블에 이름은 '유재석', 나이는 40인 회원을 추가하는 SQL을 작성하세요.
-2. Connection과 PreparedStatement를 사용하여 해당 SQL을 실행하고, executeUpdate()의 반환 값으로 "1개의 레코드가 추가되었습니다." 또는 "추가 실패" 메시지를 출력하세요.
+[문제 2] DAO 클래스 설계 (싱글톤 및 DB연결)
+1. DB 연결 및 CRUD 로직을 포함할 ProductDao 클래스를 싱글톤 패턴으로 설계하세요.
+2. ProductDao의 생성자에서 DriverManager.getConnection()을 호출하여 jdbc_product_db 데이터베이스에 연결하는 코드를 작성하세요.
+3. DB 연결에 필요한 Connection 객체는 private 멤버 변수로 선언하여 관리하세요.
 
-[문제 3] 모든 데이터 조회 (SELECT)
-1. members 테이블의 모든 회원 정보를 조회하는 SQL(SELECT * FROM members)을 작성하세요.
-2. PreparedStatement와 ResultSet을 사용하여 모든 레코드를 조회하세요.
-3. while(rs.next()) 반복문을 사용하여, 각 회원의 id, name, age를 콘솔에 출력하세요.
+[문제 3] 제품 등록 (Create)
+1. ProductDao 클래스에 create(ProductDto dto) 메소드를 추가하세요.
+2. 이 메소드는 ProductDto 객체를 매개변수로 받아, INSERT INTO product (pname, pprice) VALUES (?, ?) SQL을 실행합니다.
+3. ? 매개변수에는 dto 객체의 getPname()과 getPprice()를 사용하여 값을 설정하세요.
+4. main 함수에서 ProductDto 객체를 생성하여 dao.create()를 호출하고, 등록 결과를 확인하세요.
 
-[문제 4] 특정 데이터 수정 (UPDATE)
-1. members 테이블에서 id가 1인 회원의 나이를 41로 수정하는 SQL을 작성하세요.
-2. executeUpdate()를 사용하여 SQL을 실행하고, "1개의 레코드가 수정되었습니다." 또는 "수정 실패" 메시지를 출력하세요.
+[문제 4] 모든 제품 조회 (Read)
+1. ProductDao 클래스에 read() 메소드를 추가하세요.
+2. 이 메소드는 SELECT * FROM product SQL을 실행하고, 조회된 모든 레코드를 ArrayList<ProductDto>에 담아 반환합니다.
+3. main 함수에서 dao.read()를 호출하여 반환된 리스트의 모든 제품 정보를 출력하세요.
 
-[문제 5] 특정 데이터 삭제 (DELETE)
-1. members 테이블에서 id가 1인 회원을 삭제하는 SQL을 작성하세요.
-2. executeUpdate()를 사용하여 SQL을 실행하고, "1개의 레코드가 삭제되었습니다." 또는 "삭제 실패" 메시지를 출력하세요.
+[문제 5] 제품 정보 수정 (Update)
+1. ProductDao 클래스에 update(ProductDto dto) 메소드를 추가하세요.
+2. 이 메소드는 ProductDto 객체를 매개변수로 받아, UPDATE product SET pname = ?, pprice = ? WHERE pno = ? SQL을 실행합니다.
+3. ? 매개변수에는 dto 객체의 Getter 메소드를 사용하여 값을 설정하세요.
+4. main 함수에서 pno가 1인 제품의 이름과 가격을 변경하는 ProductDto 객체를 생성하여 dao.update()를 호출하고, 수정 결과를 확인하세요.
 
-[문제 6] 와일드카드(?)를 이용한 동적 INSERT
-1. Scanner를 사용하여 사용자로부터 이름과 나이를 입력받으세요.
-2. INSERT INTO members (name, age) VALUES (?, ?) SQL을 사용하세요.
-3. PreparedStatement의 setString(), setInt() 메소드를 사용하여 ?에 입력받은 값을 각각 대입한 뒤, SQL을 실행하세요.
+[문제 6] 제품 삭제 (Delete)
+1. ProductDao 클래스에 delete(int pno) 메소드를 추가하세요.
+2. 이 메소드는 pno를 매개변수로 받아, DELETE FROM product WHERE pno = ? SQL을 실행합니다.
+3. main 함수에서 dao.delete()를 호출하여 pno가 1인 제품을 삭제하고, 삭제 결과를 확인하세요.
 
-[문제 7] 와일드카드(?)를 이용한 동적 SELECT
-1. Scanner를 사용하여 사용자로부터 조회할 회원의 id를 입력받으세요.
-2. SELECT * FROM members WHERE id = ? SQL을 사용하세요.
-3. PreparedStatement에 id 값을 대입하고 executeQuery()를 실행하세요.
-4. if(rs.next())를 사용하여, 조회된 회원이 있으면 해당 회원의 정보를 출력하고, 없으면 "해당 ID의 회원이 없습니다." 메시지를 출력하세요.
+[문제 7] Scanner를 이용한 제품 등록
+1. main 함수에서 Scanner를 사용하여 사용자로부터 제품명과 가격을 입력받으세요.
+2. 입력받은 정보로 ProductDto 객체를 생성하세요.
+3. 생성된 Dto 객체를 ProductDao의 create() 메소드에 전달하여 제품을 등록하세요.
 
-[문제 8] DAO 클래스 만들기 (싱글톤)
-1. DB 연결 로직을 포함하는 MemberDao 클래스를 싱글톤 패턴으로 만드세요.
-2. MemberDao 클래스 안에, 모든 회원을 조회하여 ArrayList<MemberDto> 형태로 반환하는 findAll() 메소드를 구현하세요. (MemberDto 클래스도 직접 만드세요.)
-3. main 함수에서 MemberDao.getInstance().findAll()을 호출하여 결과를 출력하세요.
+[문제 8] Scanner를 이용한 제품 정보 수정
+1. main 함수에서 Scanner를 사용하여 사용자로부터 수정할 제품의 번호(pno)와 새로운 제품명, 새로운 가격을 입력받으세요.
+2. 입력받은 정보로 ProductDto 객체를 생성하세요.
+3. 생성된 Dto 객체를 ProductDao의 update() 메소드에 전달하여 제품 정보를 수정하세요.
 
-[문제 9] DTO를 이용한 데이터 전달
-1. MemberDto 클래스에 name과 age를 멤버 변수로 갖도록 하세요.
-2. MemberDao 클래스에, MemberDto 객체를 매개변수로 받아 회원을 등록하는 save(MemberDto member) 메소드를 구현하세요.
-3. main 함수에서 Scanner로 이름과 나이를 입력받아 MemberDto 객체를 생성하고, dao.save() 메소드에 전달하여 DB에 저장되도록 하세요.
+[문제 9] Scanner를 이용한 제품 삭제
+1. main 함수에서 Scanner를 사용하여 사용자로부터 삭제할 제품의 번호(pno)를 입력받으세요.
+2. 입력받은 pno를 ProductDao의 delete() 메소드에 전달하여 제품을 삭제하세요.
+
+[문제 10] CRUD 기능 통합
+1. main 함수에 for(;;) 무한루프를 만드세요.
+2. 루프 안에서 사용자에게 "1.제품등록 2.제품출력 3.제품수정 4.제품삭제" 메뉴를 보여주고, Scanner로 번호를 입력받으세요.
+3. if-else if 문을 사용하여 각 번호에 맞는 기능(문제 7, 4, 8, 9에서 구현한 로직)이 실행되도록 프로그램을 완성하세요.

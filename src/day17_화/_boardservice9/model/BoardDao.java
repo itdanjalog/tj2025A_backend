@@ -12,7 +12,7 @@ import java.util.List;
 
 public class BoardDao {
     // 파일 경로를 상수로 관리하면 유지보수가 편리합니다.
-    private static final String FILE_PATH = "./src/day17_화/_boardservice9/data.csv";
+    private static final String FILE_PATH = "src/day17_화/_boardservice9/resource/data.csv";
     // 싱글톤
     private static final BoardDao instance = new BoardDao();
     private BoardDao() { csvOpen(); }
@@ -51,7 +51,8 @@ public class BoardDao {
     public void fileSave() {
         // try-with-resources 구문으로 CSVWriter를 안전하게 사용
         try {
-            CSVWriter writer = new CSVWriter(new FileWriter(FILE_PATH) );
+            FileWriter fileWriter = new FileWriter(FILE_PATH);
+            CSVWriter writer = new CSVWriter( fileWriter );
             // boardDB에 있는 모든 BoardDto 객체를 String[] 리스트로 변환
             List<String[]> data = new ArrayList<>();
             for (BoardDto dto : boardDB) {
@@ -75,20 +76,19 @@ public class BoardDao {
     public void fileLoad() {
         // try-with-resources 구문으로 CSVReader를 안전하게 사용
         try{
-            CSVReader reader = new CSVReader(new FileReader(FILE_PATH));
+            FileReader fileReader = new FileReader(FILE_PATH);
+            CSVReader reader = new CSVReader( fileReader );
             // CSV 파일의 모든 데이터를 한번에 읽어옵니다.
             List<String[]> allData = reader.readAll();
             // 불러온 데이터로 boardDB를 새로 채우기 전에 기존 데이터를 비웁니다.
             boardDB.clear();
             // 읽어온 String[] 리스트를 다시 BoardDto 객체로 변환
             for (String[] row : allData) {
-                if (row.length >= 3) { // 데이터가 올바른지 간단히 확인
-                    String content = row[0];
-                    String writer = row[1];
-                    int pwd = Integer.parseInt(row[2]); // 비밀번호(String)는 int로 변환
-                    BoardDto boardDto = new BoardDto(content, writer, pwd);
-                    boardDB.add(boardDto);
-                }
+                String content = row[0];
+                String writer = row[1];
+                int pwd = Integer.parseInt(row[2]); // 비밀번호(String)는 int로 변환
+                BoardDto boardDto = new BoardDto(content, writer, pwd);
+                boardDB.add(boardDto);
             }
             reader.close();
         } catch (Exception  e) {

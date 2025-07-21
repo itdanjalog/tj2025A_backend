@@ -8,29 +8,47 @@
     문제2 / 자습1
     자습2
  07월 22일 화	40
-    1. 예외처리/파일처리 복습
-    2. OPENCSV 예제
+    1. 예외처리/파일처리 복습 , OPENCSV 예제
+    2. BoardService9 예외처리/CSV
     3. BoardService9 예외처리/CSV
-    4. BoardService9 예외처리/CSV
+    4. JDBC
     5. JDBC
     6. JDBC
-    7. Wating CSV 버전 ( BoardService9 참고 )
+    7. Waiting CSV 버전 ( BoardService9 참고 )
     8. JDBC 문제
-    *집합
-    *BoardService10
 
  07월 23일 수	41
-    1. BoardService10
-    2. BoardService10
-    3. BoardService10
-    4. 기본클래스	기본클래스	기본클래스 / 문제	스레드	스레드	스레드 / 문제	과제	과제
+    1. BoardService10 CRUD/JDBC
+    2. BoardService10 CRUD/JDBC
+    3. BoardService10 CRUD/JDBC
+    4. 기본클래스
+    5. 기본클래스
+    6. 기본클래스
+    7. Waiting 문제
+    8. 기본클래스 문제
 
- 07월 24일 목	42		제네릭	제네릭 / 문제	컬렉션프레임워크	컬렉션프레임워크	컬렉션프레임워크 / 문제	boardService11	boardService11	boardService11
-    - https://github.com/itdanjalog/tj2024b_web1/tree/master/tj2024b_web1/src/main/java/day07
-    - boardService11( DTO 없이 MAP 이용 )
+ 07월 24일 목	42
+    1. 제네릭
+    2. 제네릭 / 문제
+    3. 컬렉션프레임워크
+    4. 컬렉션프레임워크
+    5. BoardService11 DTO->MAP
+    6. BoardService11 DTO->MAP
+    7. Waiting 문제
+    8. 컬렉션문제
 
- 07월 25일 금	43		공공데이터	공공데이터 / 문제	크롤링	크롤링 / 문제	과제	과제	과제	과제
+ 07월 25일 금	43
+    1. 집합
+    2. 집합
+    3. 스레드
+    4. 스레드
+    5. 스레드
+    6. 문제
+    7. 문제
+    8. 문제
 
+- https://github.com/itdanjalog/tj2024b_web1/tree/master/tj2024b_web1/src/main/java/day07
+- boardService11( DTO 없이 MAP 이용 )
 * 무료 클라우드 DB
 https://freedb.tech/
 
