@@ -9,7 +9,7 @@ public class BoardDao {
     public static BoardDao getInstance(){
         return instance;
     }
-    // DB 대신할 리스트 선언
+    // DB 대신할 리스트 선언 < 추후에 사용하지 않음 >
     ArrayList<BoardDto> boardDB = new ArrayList<>();
 
 }
