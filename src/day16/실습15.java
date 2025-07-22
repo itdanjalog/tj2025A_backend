@@ -1,7 +1,102 @@
 package day16;
 
+import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class 실습15 {
-}
+    public static void main(String[] args) {
+        // * 파일처리 목적 : (저장) 자바 외 저장소로 영구저장 가능하다.
+        // 문제1 : (출력 : 자바 --> 파일 )
+        // (1) 파일의 경로 지정
+        String path = "src/diary.txt";
+        try { // try{ 예외가 발생할것 같은 또는 일반예외 }
+            // (2) 출력 객체 생성 , 일반예외 발생 , try ~ catch
+            FileOutputStream fout = new FileOutputStream(path);
+            // (3) 출력할 내용
+            String str = "오늘 날씨는 맑았다. 자바 공부는 재미있다.";
+            // (4) 출력할 내용 --> 바이트 배열 변환 ?? 스트림(데이터 이동경로-바이트단위)
+            byte[] outBytes = str.getBytes();
+            // (5) 바이트 내보내기 , 일반예외 발생 , try ~ catch
+            fout.write( outBytes );
+        }catch ( FileNotFoundException e ){ // catch( 예외클래스명 변수명 ){ 예외일때코드; }
+            System.out.println("예외발생");
+        }catch ( IOException e ){
+            System.out.println("예외발생");
+        }
+        // 문제2 : (입력 : 파일 --> 자바 )
+        // (1) 파일의 경로 지정 : 문제1번 동일하므로 생략
+        try {
+            // (2) 입력 객체 생성  ,  일반예외 발생 , try ~ catch
+            FileInputStream fin = new FileInputStream( path );
+            // (3) 가져올 바이트을 저장할 배열 선언 ( 파일 크기만 )
+            File file = new File( path ); // 파일 객체 , .length() : 파일의 (long)용량 반환 함수
+            byte[] inBytes = new byte[ (int) file.length()];
+            // (4) 읽어온 바이트를 배열에 저장 ,  일반예외 발생 , try ~ catch
+            fin.read(inBytes);
+            // (5) 읽어온 바이트를 문자열로 변환
+            String inStr = new String( inBytes );
+            System.out.println( inStr );
+        }catch ( Exception e ){
+            System.out.println("예외발생");
+        }
+
+        // 문제3 :
+        File file = new File(path);
+        System.out.println( file.exists() );    // 파일 존재 여부 true/false 반환 함수
+        System.out.println( file.getPath() );   // 파일 경로 반환 함수
+        System.out.println( file.getName() );   // 파일 이름 반환 함수
+        System.out.println( file.length() );    // 파일 용량(long) 반환 함수
+
+        // 문제4 :
+        try {
+            // 1. 문자열 입력받기
+            Scanner scan = new Scanner(System.in);
+            System.out.print(">> 이름 : ");
+            String name = scan.next();
+            String outStr = name + "님이 방문했습니다.\n";// 2. 문자열 연결 : +
+            String path2 = "src/visit_log.txt";  // 3. 파일 경로 지정
+            File file2 = new File(path2); // 4. 지정 경로에 파일 존재여부 확인
+
+            // 방안1]
+//            String inStr = ""; // 공백문자열
+//            if (file2.exists()) { // 파일 존재하면 // 입력
+//                FileInputStream finput = new FileInputStream(path2); // 5. 파일 입력 객체
+//                byte[] bytes = new byte[(int) file2.length()]; // 6. 파일 용량 만큼 배열 선언
+//                finput.read(bytes); // 7. 읽어오기
+//                inStr = new String(bytes);  // 8. 문자열로 변환
+//            }
+//            inStr += outStr; // 9. 불러온 문자열과 입력받은 문자열 연결
+//            FileOutputStream foutput = new FileOutputStream( path2 );// 10. 출력객체
+//            byte[] bytes = inStr.getBytes(); // 11. 바이트로 변환
+//            foutput.write( bytes ); // 12. 바이트 내보내기
+
+            // 방안2] new FileOutputStream( 경로 , true );
+            FileOutputStream foutput = new FileOutputStream( path2 , true );
+            foutput.write( outStr.getBytes( ) );
+
+        } catch (Exception e) {   System.out.println( e );  }
+
+        // 문제8 : https://www.data.go.kr/data/3044322/fileData.do
+        // --> src/day16/인천광역시 부평구_인구 현황.csv
+        try {
+            String path3 = "src/day16/인천광역시 부평구_인구 현황.csv"; // (1) 파일 경로 지정
+            FileInputStream fin3 = new FileInputStream(path3); // (2) 파일 입력 객체 생성
+            // (3) 파일 읽어올 바이트를 파일 크기만  선언
+            File file3 = new File(path3);
+            byte[] bytes3 = new byte[(int) file3.length()];
+            fin3.read(bytes3);  // (4) 읽어오기
+            String str3 = new String(bytes3, "EUC-KR"); // (5) 문자열로 변환
+            String[] rows = str3.split("\n"); // (6) 행 단위로 분리하기 , .split( "구분문자" );
+            for( int i = 0 ; i < rows.length ; i++ ){ // (7) 행 단위 반복
+                String row = rows[i];   // (8) 하나의 행 추출
+                String[] cols = row.split(","); // (9) 하나의 행에서 열 분리하기
+                System.out.printf("동별: %s, 총 인구: %s명 \n" , cols[0], cols[1] ); // 첫번째열[0] 두번째열[1]
+            }
+        } catch (Exception e) { System.out.println( e );   }
+
+    } // main end
+}  // class end
 /*
 [JAVA] 실습15 : 파일 처리
 [ 문제 ] 아래 파일 처리 관련 문제를 해결하시오.
