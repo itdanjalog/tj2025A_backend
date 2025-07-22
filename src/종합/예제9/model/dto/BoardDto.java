@@ -4,6 +4,7 @@ public class BoardDto {
     // 1. 멤버변수
     private String content;
     private String writer;
+
     // 생성자 , setter/getter , toString
     public BoardDto() { }
     public BoardDto(String content, String writer) {
