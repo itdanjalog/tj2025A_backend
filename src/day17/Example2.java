@@ -26,10 +26,12 @@ public class Example2 {
                                 Connection conn = DriverManager.getConnection("서버주소","계정","비밀번호");
                             (2) 연동된 DB에 SQL 기재 함수 , 기재된 PreparedStatement 타입 반환
                                 PreparedStatement ps = conn.prepareStatement( SQL문법 );
+
                     2) PreparedStatement : SQL 실행 조작
                             (1) 기재된 SQL 실행 함수
                                 ResultSet rs = ps.executeQuery();   SELECT 문법 실행 결과를 ResultSet 타입 반환
                                 int count = ps.executeUpdate();     INSERT , UPDATE , DELETE 문법 실행 결과 int 타입 반환
+
                     3) ResultSet : SQL 실행 결과 조작
                             (1) SQL 결과 조작 함수
                                 rs.next();                          조회된 레코드들 중에서 다음 레코드 이동 함수
