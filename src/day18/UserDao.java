@@ -54,16 +54,28 @@ public class UserDao {
         return false; // 실패
     }
 
+    // 2) USER 테이블에 INSERT 해보기2 : 매개변수 사용
+    public boolean userInsert2( String uname , int uage ){
+        try {
+            // 1. SQL 작성하기 , ?:sql에 들어갈 매개변수
+            String sql = "insert into user(uname,uage) values( ? , ? ) ";
+            // 2. SQL 기재하기
+            PreparedStatement ps = conn.prepareStatement(sql);
+            // * SQL ?매개변수 대입하기 , set:저장 , get:호출
+            // ps.setXXX( ?번호 , 값 ) : XXX 타입으로 ?번째에 값 대입
+            ps.setString( 1 , uname );
+            // SQL 문법내 첫번째 ?에 uname 변수값을 String 타입으로 대입한다.
+            ps.setInt( 2 , uage );
+            // SQL 문법내 두번쨰 ?에 uage 변수값을 int 타입으로 대입한다.
+            // 3. SQL 실행하기
+            int count =  ps.executeUpdate();
+            // 4. SQL 결과에 따른 확인/로직/리턴
+            if( count >= 1 ) return true;
+            return false;
+        } catch (Exception e) { System.out.println(e); }
+        return false;
+    } // func end
 } // class end
-
-
-
-
-
-
-
-
-
 
 
 
