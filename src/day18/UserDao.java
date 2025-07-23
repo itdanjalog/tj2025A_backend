@@ -61,19 +61,20 @@ public class UserDao {
             String sql = "insert into user(uname,uage) values( ? , ? ) ";
             // 2. SQL 기재하기
             PreparedStatement ps = conn.prepareStatement(sql);
-            // * SQL ?매개변수 대입하기 , set:저장 , get:호출
+            // 3. SQL ?매개변수 대입하기 , set:저장 , get:호출
             // ps.setXXX( ?번호 , 값 ) : XXX 타입으로 ?번째에 값 대입
             ps.setString( 1 , uname );
             // SQL 문법내 첫번째 ?에 uname 변수값을 String 타입으로 대입한다.
             ps.setInt( 2 , uage );
             // SQL 문법내 두번쨰 ?에 uage 변수값을 int 타입으로 대입한다.
-            // 3. SQL 실행하기
+
+            // 4. SQL 실행하기
             int count =  ps.executeUpdate();
-            // 4. SQL 결과에 따른 확인/로직/리턴
-            if( count >= 1 ) return true;
-            return false;
+            // 5. SQL 결과에 따른 확인/로직/리턴
+            if( count >= 1 ) return true; // 결과가 1이상 이면 성공
+            return false; // 결과가 1미만이면 실패
         } catch (Exception e) { System.out.println(e); }
-        return false;
+        return false; // 예외(catch) 발생하면 실패
     } // func end
 } // class end
 
