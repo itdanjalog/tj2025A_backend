@@ -89,7 +89,7 @@ SELECT t2.* from table1 t1 RIGHT JOIN table2 t2 ON t1.num_pk = t2.num_fk where t
         3. JOIN ON
         4. *NATUAL JOIN 
         5. *JOIN USING  
-    차집합 : 두 테이블간의 테이블A의 레코드를 제외한 테이블B 의 레코드 조회
+    차집합 : 두 테이블간의 테이블A의 레코드를 제외한 테이블B 의 레코드 조회 또는 반대
 		A-B : SELECT 테이블A.* FROM 테이블A LFEFT OUTER JOIN 테이블B ON 테이블A.PK = 테이블B.FK WHERE 테이블B.FK IS NULL;
     합집합 : 두 테이블간의 모든 레코드를 하나의 테이블로 조회 
 		ORACLE DB : FULL OUTER JOIN 
