@@ -1,31 +1,38 @@
 # 1. 데이터베이스 준비		
-drop database if exists example6_집합;		# 만약에 'example6_집합' 데이터베이스 존재하면 삭제 
-create database example6_집합;				# 'example6_집합' 데이터베이스 생성 
-use example6_집합;							# 'example6_집합' 데이터베이스 사용 활성화
-# 2. 테이블 
-create table table1(						# 'table1' 테이블 생성 
-	num_pk int , 							# 속성명 속성타입 
-    constraint primary key( num_pk)			# 속성의 제약조건 설정 
+drop database if exists mydb0724;		# 만약에 'mydb0724' 데이터베이스 존재하면 삭제
+create database mydb0724;				# 'mydb0724' 데이터베이스 생성
+use mydb0724;							# 'mydb0724' 데이터베이스 사용 활성화
+# 2. 테이블
+create table table1(						# 'table1' 테이블 생성
+	num_pk int , 							# 속성명 속성타입
+    constraint primary key( num_pk)			# 속성의 제약조건 설정
 );
 create table table2(
-	no_pk int , 
-    constraint primary key( no_pk ) , 
-    num_pk int , 
+	no_pk int ,
+    constraint primary key( no_pk ) ,
+    num_pk int ,
     constraint foreign key( num_pk ) references table1( num_pk )
 );
 # 3. 레코드 삽입
-insert into table1 values(1), (2), (3), (4), (5);				# 하나의 insert 에 5개 레코드 삽입 
-insert into table2 values(1,1) , (2,2) , (3,1) , (4,1) , (5,2);	# 하나의 insert 에 5개 레코드 삽입 
+insert into table1 values(1), (2), (3), (4), (5);				# 하나의 insert 에 5개 레코드 삽입
+insert into table2 values(1,1) , (2,2) , (3,1) , (4,1) , (5,2);	# 하나의 insert 에 5개 레코드 삽입
 # 4. 레코드 조회
 select * from table1;
 select * from table2;
 	# PK(기본키/식별키) 필드/속성 : 고유한 값들을 가진 필드			, 중복없음unique , not null , ex] 주민등록번호 , 사번 , 학번, 제품번호, 주문번호
-	# FK(외래키/참조키) 필드/속성 : 다른 테이블의 속성값 참조하는 필드	, 중복허용 , null 허용 		  , pk 속성값 를 참조하는 속성값 
+	# FK(외래키/참조키) 필드/속성 : 다른 테이블의 속성값 참조하는 필드	, 중복허용 , null 허용 		  , pk 속성값 를 참조하는 속성값
 
-# 5. 집합 : 교집합 : 두 테이블간의 공통으로 포함하는 속성값으로 이루어진 테이블조회 
+# 5. 집합 : 교집합 : 두 테이블간의 공통으로 포함하는 속성값으로 이루어진 테이블조회
 # 조회시 조회단위 : 레코드 단위
 select * from table1;				# 레코드 5개 조회
 select * from table1 , table2;		# 레코드 25개 조회 , 2개 이상의 테이블을 조회 : select * from 테이블명A , 테이블명B;
+/*
+용어 명확화: CROSS JOIN
+5번 항목의 select * from table1, table2; 쿼리는 CROSS JOIN 또는 **'데카르트 곱(Cartesian Product)'**이라고 명확히 설명해주시면 좋습니다.
+table1의 5개 레코드와 table2의 5개 레코드가 1:1로 모두 매칭되어 총 5x5=25개의 레코드가 나오는 원리를 설명해주시면, 학생들이 왜 JOIN 조건이 필수적인지 더 명확하게 이해하게 됩니다.
+
+*/
+
 
 # 교집합
 
