@@ -73,7 +73,7 @@ public class Example1 {
         String str2 = new String("유재석");
         System.out.println( str1 == str2 );     // false
         System.out.println( str1.equals( str2 )); // true
-            // 3. .hashCode() : 객체의 주소(객체가위치한 메모리위치) 값을 정수로 반환
+            // 3. .hashCode() : 객체를 식별 하는 값을 정수로 반환
         System.out.println( str1.hashCode() );
         System.out.println( str2.hashCode() );
         System.out.println( o9.hashCode() );
