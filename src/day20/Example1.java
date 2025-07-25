@@ -3,6 +3,10 @@ package day20;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 class BookDto{
@@ -61,7 +65,37 @@ public class Example1 {
                 주요메소드 :
                     1) .parseXXXX( "문자열" ) : 문자열 --> XXXX 타입 변환 메소드
                     2) String.valueOf( 자료 ); * 자료 --> 문자열 변환
+
+            4. LocalDateTime 클래스 : 시스템의 날짜/시간 정보 클래스
+                특징 : 날짜/시간 정의/형식/세부/계산
+                주요메소드
+                    1. LocalDateTime.now(); : 시스템의 현재 날짜/시간 를 갖는 LocalDateTime객체 반환
+                    2. LocalDateTime.of( 년 , 월 , 일 , 시 , 분 , 초 );   : 지정한 값으로 날짜/시간를 갖는 LocalDateTime객체 반환
+                    3. .getYear()   : 객체내 연도 (int)반환
+                    4. .getMonthValue() : 객체내 월 (int)반환
+                    5. .getDayOfMonth() : 객체내 일 (int)반환
+                    6. .getHour() : 객체내 시 (int)반환
+                    7. .getMinute() : 객체내 분 (int)반환
+                    8. .getSecond() : 객체내 초 (int)반환
+                    9. .format( DateTimeFormatter객체 ); : 지정한 형식으로 날짜/시간 문자열로 반환
+                    + DateTimeFormatter 날짜/시간 형식 변환 클래스
+                    + DateTimeFormatter 변수명 = DateTimeFormatter.ofPattern();
+                    + 패턴 : y연도 M월 d일 h시 m분 s초
+                    10. .plusDays( 일수 )  : 객체내 일수를 더한 결과를 LocalDateTime 반환
+                    11. .minusDays( 일수 ) : 객채네 일수를 뺀 결과를 LocalDateTime 반환
+
+
+
+
+
+
+
+
+
+
+
         */
+
 
         // [1] Object
         // 1) Object 타입은 모든 타입을 상속 하므로 *다형성*으로 타입변환 가능하다.
@@ -151,6 +185,41 @@ public class Example1 {
         // 기본타입 --> 문자열 변환
         String s1 = 100+""; // 방법1]  자료+"" , 값+문자열 --> 문자열
         String s2 = String.valueOf( 100 ); // 방법2] String.valueOf( 자료 );
+
+        // [4]
+        // 1. 현재 날짜와 시간 생성
+        LocalDate localDate = LocalDate.now();
+        System.out.println( localDate ); // 2025-07-25
+        LocalTime localTime = LocalTime.now();
+        System.out.println( localTime ); // 11:36:19.843721700
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println( localDateTime ); // 2025-07-25T11:37:22.964639700
+
+        // 2. 지정한 날짜/시간 생성 , of( 년 , 월 , 일 , 시 , 분 , 초 );
+        LocalDateTime.of( 2025, 07 , 25 , 11 ,  38 , 15 );
+
+        // 3. 날짜/시간 형식 변경
+            // 패턴 : y연도 , M월 , d일 , h시 , m분 s초
+            // 날짜/시간객체.format( 형식객체) : 지정한 형식으로 변환된 문자열 반환
+        DateTimeFormatter formatter
+                = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 hh:mm:ss");
+        String today = localDateTime.format( formatter );
+        System.out.println( today ); // 2025년 07월 25일 11:43:11
+
+        // 4. 날짜 세부 정보
+        int year = localDateTime.getYear(); // 연도
+        int month = localDateTime.getMonthValue(); // 월
+        int day = localDateTime.getDayOfMonth(); // 일
+        int hour = localDateTime.getHour(); // 시
+        int minute = localDateTime.getMinute(); // 분
+        int seconde = localDateTime.getSecond(); // 초
+
+        // 5. 날짜 계산
+        LocalDateTime plusDateTime = localDateTime.plusDays( 10 );
+        System.out.println( plusDateTime ); // 2025-08-04T11:48:31.907914100
+        LocalDateTime minusDateTime = localDateTime.minusDays( 30 );
+        System.out.println( minusDateTime ); // 2025-06-25T11:49:32.472356200
+
 
     } // main end
 } // class end
