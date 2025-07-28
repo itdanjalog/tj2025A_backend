@@ -2,6 +2,20 @@ package day21;
 
 import java.awt.*;
 
+class 작업스레드2 extends Thread{
+    // extends : 클래스 타입 을 물려받는 키워드
+    // Thread : 멀티스레드 클래스
+    @Override
+    public void run() {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        for( int i = 1 ; i<=5 ; i++ ){
+            toolkit.beep();
+            try{ Thread.sleep( 1000 ); }
+            catch ( Exception e ){ }
+        }
+    }
+} // class end
+
 class 작업스레드1 implements Runnable {
     // implements : 인터페이스 타입 구현 키워드
     // Runnable : 멀티스레드 인터페이스
@@ -15,6 +29,8 @@ class 작업스레드1 implements Runnable {
         }
     }
 } // class end
+
+
 
 public class Example1 {
     public static void main(String[] args) {
@@ -57,12 +73,21 @@ public class Example1 {
                         @Override public void run(){
                             // 작업스레드가 처리할 코드
                         }
-                    };
+                    }
                     ----
                     Thread thread = new Thread( new 작업클래스() );
                     thread.start();
 
-                (3)
+                (3) 상속 , 상속은 클래스당 1번 , *구현은 클래스당 여러번*
+                    class 작업클래스 extends Thread{
+                        @Override public void run(){
+                            // 작업스레드가 처리할 코드
+                        }
+                    }
+                    --------
+                    작업클래스 thread = new Thread();
+                    thread.start();
+
 
             5. 주요 클래스/인터페이스
                 (1) Thread 클래스
@@ -120,6 +145,20 @@ public class Example1 {
             try{ Thread.sleep( 1000 ); }
             catch ( Exception e ){ }
         } // for end
+
+        // [4] 멀티 스레드 예3 : 상속
+
+        // 1) 소리 5번
+        작업스레드2 thread3 = new 작업스레드2();
+        thread3.start();
+
+        // 2) 출력 5번
+        for( int i = 1 ; i<=5 ; i++ ){
+            System.out.println("[4] MAIN 스레드가 읽어드리는 코드"+i); // main메소드가 처리하는 코드
+            try{ Thread.sleep( 1000 ); }
+            catch ( Exception e ){ }
+        } // for end
+
 
 
     } // main end
