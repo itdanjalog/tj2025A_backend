@@ -33,6 +33,7 @@ public class Example2 {
         nameList.add("유재석"); nameList.add("강호동"); nameList.add("신동엽");
         int randomIndex = random.nextInt( nameList.size() ); // .size() : arrayList 길이 반환 메소드
         System.out.println("추첨된 이름 : " + nameList.get( randomIndex ) );
+
         // 활용2] 새로운 비밀번호 , 인증코드 문자 난수 표현
         String code = ""; // 빈 문자열 생성
         for( int i = 1 ; i <= 6 ; i++ ){ // 6자리 만들기 위한 6회전반복문
@@ -42,6 +43,7 @@ public class Example2 {
             code += str;
         } // for end
         System.out.println( "생성된 코드 : " + code );
+
         // 활용3] 아스키코드 패턴으로 난수 계산식 못만들 경우 직접 난수에 넣을 데이터를 배열로 선언
         char[] ranStr = { '0' , '1' , '2' , '3' , 'A' , 'a' , '!'  };
         String newPwd = "";
@@ -52,6 +54,28 @@ public class Example2 {
         }
         System.out.println( "생성된 패스워드 : " + newPwd );
 
+        // 활용4] 주사위 : 1~6 사이
+        int dice = random.nextInt( 6 ) + 1;
+        System.out.println( dice );
+
+        // 활용5] 로또 번호 생성 : 1 ~ 45 사이의 중복없이 6번 생성
+        ArrayList< Integer > lottoList = new ArrayList<>();
+        for( ; ; ) {
+            int lotto = random.nextInt(45) + 1; // 생성된 로또 번호
+            if( lottoList.contains( lotto ) ){ // 리스트에 생성된 로또번호가 존재하면
+                continue; // 이번 반복문 무효처리
+            }
+            lottoList.add( lotto );  // 생성된 로또 번호를 리스트에 담기
+            if( lottoList.size() == 6 ) break; // 로또 번호가 6개 이면 반복문 종료
+        }
+        System.out.println( lottoList );
+
+        // 활용6] 하나의 문자열에서 추출한 문자로 문자열 난수 생성
+        String ranStr2 =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        int strlen = ranStr2.length(); // (1) 문자열 길이 구하기
+        int ranIndex = random.nextInt( strlen ); // (2) 문자열 길이내 난수 생성
+        char str = ranStr2.charAt( ranIndex ); // (3) 문자열내 인덱스 위치한 문자 1개 추출
+        System.out.println( str );
 
 
 
