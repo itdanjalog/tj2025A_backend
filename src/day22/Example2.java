@@ -63,7 +63,7 @@ public class Example2 {
         for( ; ; ) {
             int lotto = random.nextInt(45) + 1; // 생성된 로또 번호
             if( lottoList.contains( lotto ) ){ // 리스트에 생성된 로또번호가 존재하면
-                continue; // 이번 반복문 무효처리
+                continue; // 이번 반복 무효처리
             }
             lottoList.add( lotto );  // 생성된 로또 번호를 리스트에 담기
             if( lottoList.size() == 6 ) break; // 로또 번호가 6개 이면 반복문 종료
