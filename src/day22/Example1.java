@@ -19,7 +19,7 @@ public class Example1 {
                 1) 문자열A == 문자열B       : "리터럴" 문자만 비교 가능하다.
                 2) 문자열A.equals(문자열B)  : "리터럴" 과 객체문자열을 비교 가능하다.
             3) 주요 메소드
-                1) 문자명A.concat(문자열B)                         : 연결 메소드
+                1) 문자열A.concat(문자열B)                         : 연결 메소드
                 2) String.format("형식문자" , 문자열A )            : 지정한 형식으로 문자열 반환 메소드
                 3) StringBuilder builder = new StringBuilder()   : 문자열 연결 클래스
                     builder.append( 문자열A );
@@ -76,10 +76,61 @@ public class Example1 {
         sql3 += "insert into ";
         sql3 += "table(name) ";
         sql3 += "values("+name+")"; // 비권장 : 띄어쓰기 주의
-
         StringBuilder sql4 = new StringBuilder();
         sql4.append("insert into table(name) ");
         sql4.append("values("+name+") ");
+
+        // 5) .charAt( 인덱스 ) : 지정한 인덱스 번호의 문자 1개 반환 메소드
+        char gender = "012345-1230123".charAt(7);
+        System.out.println( gender ); // 1
+        // 활용] nextChar()[x] --> 문자1개입력 : scan.next().charAt(0)
+
+        // 6) .length() : 문자열내 문자수 반환 메소드
+        System.out.println( "012345-1230123".length() ); // 인덱스:0~13 , 길이:14
+        // 활용] for( int index = 0 ; index < 문자열.length() ; index++ ){ }
+
+        // 7) .replace( 기존문자열 , 새로운문자열 ) , replaceAll( 기존문자열 , 새로운문자열 )
+        // : 지정한 문자열내 기존문자열을 새로운문자열로 생성(NEW)후 반환 메소드
+        String str12 = "자바프로그래밍".replace( "자바" , "JAVA" );
+        System.out.println( str12 ); // JAVA프로그래밍
+        // 활용] HTML 줄바꿈 <br> -----> JAVA 줄바꿈 \n
+        String htmlData = "유재석<br/>안녕하세요";
+        String newData = htmlData.replaceAll( "<br/>" , "\n" );
+        System.out.println( newData );
+
+        // 8) .subString( 시작인덱스 , [끝인덱스] ); : 시작인덱스부터 끝인덱스 전 까지 문자열 추출
+        String str13 = "012345-1230123".substring( 0 , 6 ); // 0번인덱스 부터 6번 인덱스 전 까지
+        System.out.println( str13 ); // 012345
+        String str14 = "012345-1230123".substring( 7 ); // 7번인덱스 부터 (마지막인덱스)까지 추출
+        System.out.println( str14 ); // 1230123
+        // 활용] 차량번호 조회 : 214가7531 , 차량번호 뒷자리 : 차량번호.subString( 차량번호.length()-1-3 );
+        // 9) .split( "구분문자" ); : 지정한 문자열내 구분문자 기준으로 잘라서 배열로 반환 메소드
+        String[] str15 = "012345-1230123".split("-"); // '-' 기준으로 문자열 쪼개기
+        System.out.println( str15[0] ); // 012345
+        System.out.println( str15[1] ); // 1230123
+        // 활용1] CSV형식 다루기 , CSV란 ,(쉼표)로 속성을 구분하고 \n 줄바꿈 구분 한다.
+        // 활용2] 날짜( 연-월-일)
+        // 활용3] 주소( 시 군 구 동 )
+        // 10) .indexOf("찾을문자열");   : 지정한 문자열내 찾을문자열이 존재하면 찾은 인덱스,없으면 -1 반환 메소드
+        int findIndex = "자바 프로그래밍 언어".indexOf("프로");
+        System.out.println( findIndex ); // 3
+        // 11) .contains("찾을문자열");  : 지정한 문자열내 찾을문자열이 존재하면 true 없으면 false 반환 메소드
+        boolean findBool = "자바 프로그래밍 언어".contains("프로");
+        System.out.println( findBool ); // true
+        // 활용] 검색기능 구현
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
