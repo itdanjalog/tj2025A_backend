@@ -24,6 +24,17 @@ public class Example1 {
                 3) StringBuilder builder = new StringBuilder()   : 문자열 연결 클래스
                     builder.append( 문자열A );
                     builder.append( 문자열B );
+                4) 문자열A.chatAt( 인덱스 )   : 지정한 인덱스의 문자 1개 반환 메소드
+                5) 문자열A.length()          : 지정한 문자열의 문자개수 반환 메소드
+                6) 문자열A.replace( 기존문자열 , 새로운문자열 )       : 지정한 문자열내 (하나)기존문자열이 존재하면 새로운문자열로 변경후 반환 메소드
+                   문자열A.replaceAll( 기존문자열 , 새로운문자열 )    : 지정한 문자열내 (모든)기존문자열이 존재하면 새로운문자열로 변경후 반환 메소드
+                7) 문자열A.subString( 시작인덱스 , [끝인덱스] )       : 지정한 문자열내 시작인덱스 부터 끝 인덱스 전까지 문자열 반환 메소드
+                8) 문자열A.split( 구분문자 )                       : 지정한 문자열내 구분문자 기준으로 쪼개서 String[] 타입 으로 반환 메소드
+                9) 문자열A.indexOf("찾을문자열")    : 지정한 문자열내 찾을문자열이 존재하면 찾은문자열인덱스 반환 없으면 -1 반환
+                10) 문자열A.contains("찾을문자열")  : 지정한 문자열내 찾을문자열이 존재하면 true 없으면 false 반환
+                11) 문자열A.getBytes() : 지정한 문자열을 byte[] 타입으로 반환 메소드
+                   <--> new String ( byte[]변수 ); : 지정한 byte[] 타입을 String 타입 변환
+
         */
         // 1. 배열을 이용한 문자열 표현
         char str1 = '유';    // ' ' 작은 따옴표로 감싼 문자1개는 char타입
@@ -109,15 +120,25 @@ public class Example1 {
         System.out.println( str15[0] ); // 012345
         System.out.println( str15[1] ); // 1230123
         // 활용1] CSV형식 다루기 , CSV란 ,(쉼표)로 속성을 구분하고 \n 줄바꿈 구분 한다.
-        // 활용2] 날짜( 연-월-일)
-        // 활용3] 주소( 시 군 구 동 )
+        // 활용2] 날짜( 연-월-일)       // 활용3] 주소( 시 군 구 동 )
+
         // 10) .indexOf("찾을문자열");   : 지정한 문자열내 찾을문자열이 존재하면 찾은 인덱스,없으면 -1 반환 메소드
         int findIndex = "자바 프로그래밍 언어".indexOf("프로");
         System.out.println( findIndex ); // 3
+
         // 11) .contains("찾을문자열");  : 지정한 문자열내 찾을문자열이 존재하면 true 없으면 false 반환 메소드
         boolean findBool = "자바 프로그래밍 언어".contains("프로");
         System.out.println( findBool ); // true
         // 활용] 검색기능 구현
+
+        // 12) .getBytes() : 지정한 문자열을 byte[] 타입으로 반환 메소드
+        byte[] str16 = "JAVA PROGRAM".getBytes() ;
+        System.out.println( Arrays.toString( str16) );
+        // [74, 65, 86, 65, 32, 80, 82, 79, 71, 82, 65, 77] = 아스키코드 표 와 같이 해석
+        String str17 = new String( str16 );
+        System.out.println( str17 ); // JAVA PROGRAM
+        // 활용] 문자열을 바이트 변환 , 파일처리 , 네트워크 등등
+
 
 
 
