@@ -58,7 +58,7 @@ public class Example2 {
         int dice = random.nextInt( 6 ) + 1;
         System.out.println( dice );
 
-        // 활용5] 로또 번호 생성 : 1 ~ 45 사이의 중복없이 6번 생성
+        // 활용5] 로또 번호 생성 : 1 ~ 45 사이의 중복없이 6개 생성
         ArrayList< Integer > lottoList = new ArrayList<>();
         for( ; ; ) {
             int lotto = random.nextInt(45) + 1; // 생성된 로또 번호
