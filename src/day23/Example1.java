@@ -1,7 +1,9 @@
 package day23;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 public class Example1 {
     public static void main(String[] args) {
@@ -65,12 +67,41 @@ public class Example1 {
         for( String str : list2 ) {
             System.out.println( str );
         }
-            // (3) forEach 문 :
+            // (3) forEach 문 : 리스트내 첫번째 요소부터 마지막 요소 까지 순서대로 반복변수에 대입하여 실행처리 한다.
             // 리스트/배열명.forEach( )
             // list2.forEach( ( 반복변수 ) -> { 실행문 } );
-            // 리스트내 첫번째 요소부터 마지막 요소 까지 순서대로 반복변수에 대입하여 실행처리 한다.
             // 람다식/화살표 함수 : 복잡한 메소드 선언 방식을 간소화 , ( 매개변수 ) -> { 실행문 };
         list2.forEach( ( str ) -> { System.out.println( str ); } );
 
+        // -------------------------------------------- //
+        // List : 순서대로 요소 저장하는 자료구조
+        // ArrayList : 배열 구조로 사용되는 List 구현체 + 메소드 비동기화( 단일 스레드 플랫폼 )
+        ArrayList< Integer > arrayList = new ArrayList<>();
+        // Vector : 배열 구조로 사용되는 List 구현체 + 메소드가 동기화 ( 멀티 스레드 플랫폼 )
+        Vector< Integer > vector = new Vector<>();
+        // LinkedList : 링크(체인/꼬리연결) 구조로 사용되는 List 구현체 + 중간 삽입/삭제 효율성 극대화
+            // 배열구조 : [ 5 ] [ 4 ] [ 7 ] [ 10 ]
+                //         0     1     2      3
+                // 만약에 1번 인덱스가 삭제 되면 2/3 인덱스는 한칸씩 이동
+                // 즉] 중간에 변화가 있으면 뒤에 요소들의 위치변화
+            // 링크구조 : [ 5 ] -> [ 4 ] -> [ 7 ] -> [ 10 ]
+                //       5/4주소값 -> 4/7주소값 -> 7/10주소값 -> 10/주소값없다.
+                // 만액에 1번 인덱스가 삭제되면 0번 인덱스 꼬리(4주소값을-->7주소값)변경
+                // 즉] 중간에 변화가 있으면 변화된 요소와 앞 요소의 연결(꼬리) 변경
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        List< Integer > integerList;
+        integerList = arrayList;
+        integerList = vector;
+        integerList = linkedList;
     } // main end
 } // class end
+
+
+
+
+
+
+
+
+
+
